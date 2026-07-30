@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://c2mbfcqaj50yr"]
+
+[ext_resource type="Script" uid="uid://d0sffqr2e45gl" path="res://game.gd" id="1_u44n3"]
+[ext_resource type="FontFile" uid="uid://cyfk0qi4xysmn" path="res://RomanGridCaps.ttf" id="1_xkndl"]
+[ext_resource type="Texture2D" uid="uid://osjvb633a141" path="res://crab idle.png" id="2_u44n3"]
+[ext_resource type="Script" uid="uid://x81586fn02kh" path="res://wave_back.gd" id="3_t88pq"]
+[ext_resource type="Script" uid="uid://bfg5ssisd1vq2" path="res://player.gd" id="4_sb48q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb48q"]
+atlas = ExtResource("2_u44n3")
+region = Rect2(0, 0, 70, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t88pq"]
+atlas = ExtResource("2_u44n3")
+region = Rect2(70, 0, 70, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gta21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb48q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t88pq")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 1.2
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gta21"]
+
+[node name="Node2D" type="Node2D" unique_id=710081918]
+script = ExtResource("1_u44n3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=254895183]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0.27058825, 0.27058825, 0.27058825, 1)
+
+[node name="Sea_Waves" type="Node2D" parent="." unique_id=842782235]
+
+[node name="Wave Back" type="Sprite2D" parent="Sea_Waves" unique_id=672368941]
+texture = ExtResource("2_u44n3")
+offset = Vector2(0, 324)
+script = ExtResource("3_t88pq")
+
+[node name="Wave Middle" type="Sprite2D" parent="Sea_Waves" unique_id=1957156367]
+
+[node name="Wave Front" type="Sprite2D" parent="Sea_Waves" unique_id=1695762833]
+
+[node name="Wave Bottom" type="Sprite2D" parent="Sea_Waves" unique_id=1596399506]
+
+[node name="GameLabel" type="Label" parent="." unique_id=1498353835]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("1_xkndl")
+theme_override_font_sizes/font_size = 24
+text = "Strandbeest
+Game"
+
+[node name="Crab (narrator)" type="CharacterBody2D" parent="." unique_id=797984074]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Crab (narrator)" unique_id=2146181064]
+texture_filter = 1
+scale = Vector2(1.5004797, 1.5004797)
+sprite_frames = SubResource("SpriteFrames_gta21")
+animation = &"Idle"
+frame_progress = 0.921874
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crab (narrator)" unique_id=2120320153]
+shape = SubResource("RectangleShape2D_s33ni")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
+script = ExtResource("4_sb48q")
+
+[node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
+
+[node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
+
+[node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
+shape = SubResource("RectangleShape2D_gta21")
