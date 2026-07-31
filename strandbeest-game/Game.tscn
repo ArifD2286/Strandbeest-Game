@@ -2,9 +2,19 @@
 
 [ext_resource type="Script" uid="uid://d0sffqr2e45gl" path="res://game.gd" id="1_u44n3"]
 [ext_resource type="FontFile" uid="uid://cyfk0qi4xysmn" path="res://RomanGridCaps.ttf" id="1_xkndl"]
+[ext_resource type="Script" uid="uid://svk3k0ydmmnl" path="res://wave_bottom.gd" id="2_2vekm"]
+[ext_resource type="Script" uid="uid://wd210ow3cbbn" path="res://wave_back_2.gd" id="2_joorw"]
+[ext_resource type="Texture2D" uid="uid://by0gux24mae5f" path="res://assets/wave-bottom.png" id="2_lvtmh"]
+[ext_resource type="Texture2D" uid="uid://bqv5p6cw04gqd" path="res://assets/beach.png" id="2_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://osjvb633a141" path="res://crab idle.png" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://x81586fn02kh" path="res://wave_back.gd" id="3_t88pq"]
 [ext_resource type="Script" uid="uid://bfg5ssisd1vq2" path="res://player.gd" id="4_sb48q"]
+[ext_resource type="Texture2D" uid="uid://cfe5ajfuqsriu" path="res://assets/wave-back-2.png" id="4_yyih5"]
+[ext_resource type="Script" uid="uid://fcdahqbonwc2" path="res://wave_middle.gd" id="5_2vekm"]
+[ext_resource type="Texture2D" uid="uid://b7rvbt3c61c5y" path="res://assets/wave-back.png" id="6_qjyg3"]
+[ext_resource type="Script" uid="uid://bnmvnr3blrbbm" path="res://wave_front.gd" id="6_yx171"]
+[ext_resource type="Texture2D" uid="uid://bqtv4may3o114" path="res://assets/bubble.png" id="9_elkpi"]
+[ext_resource type="Texture2D" uid="uid://dtxg7f0pogw41" path="res://assets/text-box.png" id="11_yyih5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sb48q"]
 atlas = ExtResource("2_u44n3")
@@ -42,25 +52,60 @@ offset_right = 1153.0
 offset_bottom = 649.0
 color = Color(0.27058825, 0.27058825, 0.27058825, 1)
 
+[node name="Sand Background" type="TextureRect" parent="." unique_id=345540427]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_qjyg3")
+
 [node name="Sea_Waves" type="Node2D" parent="." unique_id=842782235]
 
+[node name="Wave Bottom" type="Sprite2D" parent="Sea_Waves" unique_id=1596399506]
+modulate = Color(1.0309138, 1.0309138, 1.0309138, 1)
+texture_filter = 1
+scale = Vector2(0.2850733, 0.2850733)
+texture = ExtResource("2_lvtmh")
+offset = Vector2(0, 1136.84)
+script = ExtResource("2_2vekm")
+
+[node name="Wave Back 2" type="Sprite2D" parent="Sea_Waves" unique_id=1692914587]
+texture_filter = 1
+scale = Vector2(0.2854197, 0.2854197)
+texture = ExtResource("4_yyih5")
+offset = Vector2(0, 1136.84)
+script = ExtResource("2_joorw")
+
 [node name="Wave Back" type="Sprite2D" parent="Sea_Waves" unique_id=672368941]
-texture = ExtResource("2_u44n3")
-offset = Vector2(0, 324)
+texture_filter = 1
+scale = Vector2(0.2850746, 0.2850746)
+texture = ExtResource("6_qjyg3")
+offset = Vector2(0, 1136.84)
 script = ExtResource("3_t88pq")
 
 [node name="Wave Middle" type="Sprite2D" parent="Sea_Waves" unique_id=1957156367]
+texture_filter = 1
+script = ExtResource("5_2vekm")
 
 [node name="Wave Front" type="Sprite2D" parent="Sea_Waves" unique_id=1695762833]
+texture_filter = 1
+scale = Vector2(0.28516033, 0.28516033)
+texture = ExtResource("9_elkpi")
+offset = Vector2(0, 1136.84)
+script = ExtResource("6_yx171")
 
-[node name="Wave Bottom" type="Sprite2D" parent="Sea_Waves" unique_id=1596399506]
+[node name="Text Box - GameLabel" type="TextureRect" parent="." unique_id=1413812893]
+offset_left = 13.999996
+offset_top = 13.000001
+offset_right = 3134.0
+offset_bottom = 1053.0
+scale = Vector2(0.061333783, 0.061333783)
+texture = ExtResource("11_yyih5")
 
 [node name="GameLabel" type="Label" parent="." unique_id=1498353835]
 texture_filter = 1
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 60.0
-offset_bottom = 43.0
+offset_right = 201.0
+offset_bottom = 75.0
 theme_override_fonts/font = ExtResource("1_xkndl")
 theme_override_font_sizes/font_size = 24
 text = "Strandbeest
@@ -73,7 +118,7 @@ texture_filter = 1
 scale = Vector2(1.5004797, 1.5004797)
 sprite_frames = SubResource("SpriteFrames_gta21")
 animation = &"Idle"
-frame_progress = 0.921874
+frame_progress = 0.114416204
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab (narrator)" unique_id=2120320153]
 shape = SubResource("RectangleShape2D_s33ni")
