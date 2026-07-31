@@ -15,6 +15,9 @@
 [ext_resource type="Script" uid="uid://bnmvnr3blrbbm" path="res://wave_front.gd" id="6_yx171"]
 [ext_resource type="Texture2D" uid="uid://bqtv4may3o114" path="res://assets/bubble.png" id="9_elkpi"]
 [ext_resource type="Texture2D" uid="uid://dtxg7f0pogw41" path="res://assets/text-box.png" id="11_yyih5"]
+[ext_resource type="Script" uid="uid://c50wdm4bkhaaq" path="res://cloud_1.gd" id="16_wuoie"]
+[ext_resource type="Script" uid="uid://dxp43xdvev1xb" path="res://cloud_2.gd" id="17_bvhbk"]
+[ext_resource type="Script" uid="uid://bm8kge4b8egxa" path="res://cloud_3.gd" id="18_cpsxm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sb48q"]
 atlas = ExtResource("2_u44n3")
@@ -127,10 +130,16 @@ shape = SubResource("RectangleShape2D_s33ni")
 script = ExtResource("4_sb48q")
 
 [node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
+script = ExtResource("16_wuoie")
+radius = null
+cycle_seconds = null
+phase_offset = null
 
 [node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
+script = ExtResource("17_bvhbk")
 
 [node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
+script = ExtResource("18_cpsxm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
 shape = SubResource("RectangleShape2D_gta21")
