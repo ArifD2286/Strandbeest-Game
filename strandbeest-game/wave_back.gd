@@ -4,7 +4,7 @@ extends Sprite2D
 # We want the the waves to move back and forth,
 # their positions would follow a sine graph whilst their speeds follows a cosine graph (see more on position and speed section).
 # This layer will share the same mechanic as wave_back_2.gd, wave_middle.gd, and wave_front.gd
-# 
+# We will use sine and cosine graph to visualise the relationship between the position and the speed of the sprite
 
 # -- POSITION --
 # The position would start at 0 or lets say the centre value of the range (the range of the position),
@@ -16,7 +16,7 @@ extends Sprite2D
 # this means that the waves are already moving at full speed before gradually decelerating or the value goes back to 0.
 
 # -- Relationship between the speed and position of the wave --
-# The relationship between sine and cosine graph perfectly explains the movement behaviour of the wave,
+# To visualise, the relationship between sine and cosine graph perfectly explains the movement behaviour of the wave,
 # when the position is at the max/furthest,
 # the speed reaches zero and proceeds to decrease into the negatives (going opposite direction) and so on.
 

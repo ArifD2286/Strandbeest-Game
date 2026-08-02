@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://wd210ow3cbbn" path="res://wave_back_2.gd" id="2_joorw"]
 [ext_resource type="Texture2D" uid="uid://by0gux24mae5f" path="res://assets/wave-bottom.png" id="2_lvtmh"]
 [ext_resource type="Texture2D" uid="uid://bqv5p6cw04gqd" path="res://assets/beach.png" id="2_qjyg3"]
-[ext_resource type="Texture2D" uid="uid://osjvb633a141" path="res://crab idle.png" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://x81586fn02kh" path="res://wave_back.gd" id="3_t88pq"]
 [ext_resource type="Script" uid="uid://bfg5ssisd1vq2" path="res://player.gd" id="4_sb48q"]
 [ext_resource type="Texture2D" uid="uid://cfe5ajfuqsriu" path="res://assets/wave-back-2.png" id="4_yyih5"]
@@ -17,33 +16,41 @@
 [ext_resource type="Texture2D" uid="uid://dtxg7f0pogw41" path="res://assets/text-box.png" id="11_yyih5"]
 [ext_resource type="Script" uid="uid://c50wdm4bkhaaq" path="res://cloud_1.gd" id="16_wuoie"]
 [ext_resource type="Script" uid="uid://dxp43xdvev1xb" path="res://cloud_2.gd" id="17_bvhbk"]
+[ext_resource type="Script" uid="uid://dpxxfspiruidw" path="res://crab.gd" id="18_bvhbk"]
 [ext_resource type="Script" uid="uid://bm8kge4b8egxa" path="res://cloud_3.gd" id="18_cpsxm"]
+[ext_resource type="Texture2D" uid="uid://osjvb633a141" path="res://assets/crab idle.png" id="18_wuoie"]
+[ext_resource type="Script" uid="uid://dcw15ic0gam3p" path="res://tutorial.gd" id="20_cpsxm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sb48q"]
-atlas = ExtResource("2_u44n3")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gta21"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvhbk"]
+atlas = ExtResource("18_wuoie")
 region = Rect2(0, 0, 70, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t88pq"]
-atlas = ExtResource("2_u44n3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpsxm"]
+atlas = ExtResource("18_wuoie")
 region = Rect2(70, 0, 70, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gta21"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sb48q")
+"texture": SubResource("AtlasTexture_bvhbk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t88pq")
+"texture": SubResource("AtlasTexture_cpsxm")
 }],
 "loop": 1,
-"name": &"Idle",
+"name": &"Crab Idle",
 "speed": 1.2
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Crab Spawn",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gta21"]
 
 [node name="Node2D" type="Node2D" unique_id=710081918]
 script = ExtResource("1_u44n3")
@@ -114,32 +121,94 @@ theme_override_font_sizes/font_size = 24
 text = "Strandbeest
 Game"
 
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
+script = ExtResource("4_sb48q")
+
+[node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
+texture_filter = 1
+position = Vector2(576, 608)
+script = ExtResource("16_wuoie")
+
+[node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
+position = Vector2(576, 608)
+script = ExtResource("17_bvhbk")
+
+[node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
+position = Vector2(576, 608)
+script = ExtResource("18_cpsxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
+shape = SubResource("RectangleShape2D_gta21")
+
+[node name="Line" type="ColorRect" parent="." unique_id=225182711]
+offset_left = 496.0
+offset_top = 608.0
+offset_right = 656.0
+offset_bottom = 610.0
+color = Color(0.27058825, 0.27058825, 0.27058825, 1)
+
 [node name="Crab (narrator)" type="CharacterBody2D" parent="." unique_id=797984074]
+script = ExtResource("18_bvhbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Crab (narrator)" unique_id=2146181064]
 texture_filter = 1
 scale = Vector2(1.5004797, 1.5004797)
 sprite_frames = SubResource("SpriteFrames_gta21")
-animation = &"Idle"
-frame_progress = 0.114416204
+animation = &"Crab Spawn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab (narrator)" unique_id=2120320153]
 shape = SubResource("RectangleShape2D_s33ni")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
-script = ExtResource("4_sb48q")
+[node name="UI" type="CanvasLayer" parent="." unique_id=180538813]
 
-[node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
-script = ExtResource("16_wuoie")
-radius = null
-cycle_seconds = null
-phase_offset = null
+[node name="Upgrade Panel Background" type="TextureRect" parent="UI" unique_id=1799130340]
+offset_left = 912.0
+offset_top = 20.0
+offset_right = 1132.0
+offset_bottom = 628.0
 
-[node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
-script = ExtResource("17_bvhbk")
+[node name="Upgrade 1" type="Button" parent="UI" unique_id=1421568814]
+offset_left = 817.0
+offset_top = 218.0
+offset_right = 967.0
+offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("1_xkndl")
+text = "Upgrade i"
 
-[node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
-script = ExtResource("18_cpsxm")
+[node name="Upgrade 2" type="Button" parent="UI" unique_id=1708285578]
+offset_left = 817.0
+offset_top = 258.0
+offset_right = 967.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("1_xkndl")
+text = "Upgrade ii"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
-shape = SubResource("RectangleShape2D_gta21")
+[node name="Start Tutorial" type="Button" parent="UI" unique_id=813323383]
+offset_left = 817.0
+offset_top = 258.0
+offset_right = 967.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("1_xkndl")
+text = "Upgrade ii"
+
+[node name="Tutorial" type="Control" parent="UI" unique_id=1892516250]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_cpsxm")
+
+[node name="Back Button" type="Button" parent="UI/Tutorial" unique_id=1582271071]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Next Button" type="Button" parent="UI/Tutorial" unique_id=48632995]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Dialogue" type="Label" parent="UI/Tutorial" unique_id=2030920503]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
