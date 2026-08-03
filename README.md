@@ -27,6 +27,15 @@ A game where you are a cloud trying to get Strandbeests across the beach by "sho
 (link will be added in the future)
 
 
+### Update Logs (this section is to state the major changes/progress in the update):
+
+Update 1: Wave movement mechanics
+Update 2: Added wave design
+Update 3.1: Cloud movement mechanics (unfinished)
+Update 3.2: Cloud movement mechanics
+Update 4.1: 
+
+
 ## Reviewer notes (for HackClub only):
 Usage of AI: I will first refer to my old projects to see if there are any similar mechanics or code blocks that I can use in this project, if I couldn't then I would ask AI to only give the new code blocks and elements needed. I will then try to use them to write the code and I would take what I wrote to the AI and explain on WHY it should work, I usually do struggle but I would also only ask for hints or explanation.
 
