@@ -161,7 +161,7 @@ shape = SubResource("RectangleShape2D_s33ni")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=180538813]
 
-[node name="Upgrade Panel Background" type="TextureRect" parent="UI" unique_id=1799130340]
+[node name="Buttons Panel Background" type="TextureRect" parent="UI" unique_id=1799130340]
 offset_left = 912.0
 offset_top = 20.0
 offset_right = 1132.0
@@ -183,14 +183,6 @@ offset_bottom = 298.0
 theme_override_fonts/font = ExtResource("1_xkndl")
 text = "Upgrade ii"
 
-[node name="Start Tutorial" type="Button" parent="UI" unique_id=813323383]
-offset_left = 817.0
-offset_top = 258.0
-offset_right = 967.0
-offset_bottom = 298.0
-theme_override_fonts/font = ExtResource("1_xkndl")
-text = "Upgrade ii"
-
 [node name="Tutorial" type="Control" parent="UI" unique_id=1892516250]
 layout_mode = 3
 anchors_preset = 0
@@ -204,6 +196,11 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="Next Button" type="Button" parent="UI/Tutorial" unique_id=48632995]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Start Tutorial" type="Button" parent="UI/Tutorial" unique_id=171098884]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
