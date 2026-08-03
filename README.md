@@ -29,11 +29,11 @@ A game where you are a cloud trying to get Strandbeests across the beach by "sho
 
 ### Update Logs (this section is to state the major changes/progress in the update):
 
-Update 1: Wave movement mechanics
-Update 2: Added wave design
-Update 3.1: Cloud movement mechanics (unfinished)
-Update 3.2: Cloud movement mechanics
-Update 4.1: 
+- Update 1: Wave movement mechanics
+- Update 2: Added wave design
+- Update 3.1: Cloud movement mechanics (unfinished)
+- Update 3.2: Cloud movement mechanics
+- Update 4.1: 
 
 
 ## Reviewer notes (for HackClub only):
