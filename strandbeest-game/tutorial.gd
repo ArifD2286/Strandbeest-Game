@@ -14,31 +14,78 @@ extends Control
 @onready var back_button = $"Back Button"
 @onready var next_button = $"Next Button"
 @onready var start_tutorial = $"Start Tutorial"
-
+@onready var text_box = $"Text Box"
 
 var tutorial_playing: bool = false
-var _state: String = "Tutorial finished"
-
+var _state: String = "Phase 1"
 
 func _ready() -> void:
-	dialogue.visibile = false
+	dialogue.visible = false
+	text_box.visible = false
 	back_button.visible = false
 	next_button.visible = false
-	
-func _process(delta: float) -> void:
-	if start_tutorial.pressed:
-		tutorial_playing = true
-	if tutorial_playing == true:
-		match _state:
-			"Phase 1":
-				dialogue.visible = true
-				next_button.visible = true
-				dialogue.text = "Hello player, welcome to Strandbeest Game! I am Mr Crabs but you can call me ..."
-				if next_button.pressed:
-					_state = "Phase 2"
-			"Phase 2":
-				dialogue.visible = true
-				next_button.visible = true
-				back_button.visible = true
-				dialogue.text = "This game "
-				
+	start_tutorial.pressed.connect(_on_start_tutorial_pressed)
+	back_button.pressed.connect(_back_button_pressed)
+	next_button.pressed.connect(_next_button_pressed)
+
+
+func _on_start_tutorial_pressed() -> void:
+	tutorial_playing = true
+	_state = "State 1"
+	update_display()
+
+# We must use [func] block so that the button has something to connect to,
+# [variable name for node (from @onready var ... = $(node name)).pressed.connect(function)]
+
+# We cannot just use:
+# if next_button.pressed:
+# 	_state = "Phase 2"
+# because a button needs to connect to a function as said earlier.
+
+# Each button would also have its own specific function, so we need 2 seperate functions.
+# One function for when the player presses back button and another for next button.
+
+
+func _back_button_pressed() -> void:
+	match _state:
+		"State 2":
+			_state = "State 1"
+		"State 3":
+			_state = "State 2"
+	update_display()
+
+
+func _next_button_pressed() -> void:
+	match _state:
+		"State 1":
+			_state = "State 2"
+		"State 2":
+			_state = "State 3"
+		"State 3":
+			_state = "End State"
+	update_display()
+
+func update_display() -> void:
+	dialogue.visible = true
+	text_box.visible = true
+	match _state:
+		"State 1":
+			next_button.visible = true
+			dialogue.text = "Hello player, welcome to Strandbeest Game! I am Mr Crabs."
+
+		"State 2":
+			next_button.visible = true
+			back_button.visible = true
+			dialogue.text = "This game's theme revolves around Strandbeests!"
+
+		"State 3":
+			next_button.visible = true
+			back_button.visible = true
+			dialogue.text = "So the way the game works..."
+
+		"End State":
+			next_button.visible = false
+			back_button.visible = false
+			dialogue.visible = false
+			text_box.visible = false
+			tutorial_playing = false
