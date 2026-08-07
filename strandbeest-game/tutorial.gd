@@ -52,6 +52,8 @@ func _back_button_pressed() -> void:
 			_state = "State 1"
 		"State 3":
 			_state = "State 2"
+		"State 4":
+			_state = "State 3"
 	update_display()
 
 
@@ -62,6 +64,8 @@ func _next_button_pressed() -> void:
 		"State 2":
 			_state = "State 3"
 		"State 3":
+			_state = "State 4"
+		"State 4":
 			_state = "End State"
 	update_display()
 
@@ -71,6 +75,7 @@ func update_display() -> void:
 	match _state:
 		"State 1":
 			next_button.visible = true
+			back_button.visible = false
 			dialogue.text = "Hello player, welcome to Strandbeest Game! I am Mr Crabs."
 
 		"State 2":
@@ -82,6 +87,11 @@ func update_display() -> void:
 			next_button.visible = true
 			back_button.visible = true
 			dialogue.text = "So the way the game works..."
+
+		"State 4":
+			next_button.visible = true
+			back_button.visible = true
+			dialogue.text = "This is the end of the tutorial. Have fun playing!"
 
 		"End State":
 			next_button.visible = false
