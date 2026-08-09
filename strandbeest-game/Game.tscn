@@ -447,3 +447,5 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="." unique_id=338999408]
