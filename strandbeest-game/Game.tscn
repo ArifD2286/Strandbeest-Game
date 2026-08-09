@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://osjvb633a141" path="res://assets/crab idle.png" id="18_wuoie"]
 [ext_resource type="Script" uid="uid://dcw15ic0gam3p" path="res://tutorial.gd" id="20_cpsxm"]
 [ext_resource type="Texture2D" uid="uid://uv5kp0kxoone" path="res://assets/Sand.png" id="20_hmewc"]
+[ext_resource type="FontFile" uid="uid://di0uluy8om5r5" path="res://Minecraft.ttf" id="21_bisgb"]
+[ext_resource type="Texture2D" uid="uid://dkq2r1fo3wcuy" path="res://assets/button panel.png" id="21_y5ctq"]
 [ext_resource type="Texture2D" uid="uid://diwvdpxtgtmhw" path="res://assets/back arrow 1.png" id="22_jsoai"]
 [ext_resource type="Texture2D" uid="uid://dwbuf621uj8gt" path="res://assets/back arrow 2.png" id="23_bisgb"]
 [ext_resource type="Texture2D" uid="uid://brlirbmaowloi" path="res://assets/next arrow 1.png" id="24_y5ctq"]
@@ -328,27 +330,46 @@ shape = SubResource("RectangleShape2D_s33ni")
 [node name="Buttons Panel Background" type="TextureRect" parent="UI" unique_id=1799130340]
 texture_filter = 1
 offset_left = 912.0
-offset_top = 20.0
-offset_right = 1132.0
-offset_bottom = 628.0
+offset_top = 40.0
+offset_right = 1122.0
+offset_bottom = 608.0
+texture = ExtResource("21_y5ctq")
 
 [node name="Upgrade 1" type="Button" parent="UI" unique_id=1421568814]
 texture_filter = 1
-offset_left = 947.0
-offset_top = 218.0
-offset_right = 1097.0
-offset_bottom = 258.0
-theme_override_fonts/font = ExtResource("1_xkndl")
-text = "Upgrade i"
+offset_left = 944.0
+offset_top = 160.0
+offset_right = 1090.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("21_bisgb")
+text = "Upgrade 1"
 
 [node name="Upgrade 2" type="Button" parent="UI" unique_id=1708285578]
 texture_filter = 1
-offset_left = 947.0
-offset_top = 258.0
-offset_right = 1097.0
-offset_bottom = 298.0
-theme_override_fonts/font = ExtResource("1_xkndl")
-text = "Upgrade ii"
+offset_left = 944.0
+offset_top = 230.0
+offset_right = 1090.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("21_bisgb")
+text = "Upgrade 2"
+
+[node name="Upg 1 Desc" type="Label" parent="UI" unique_id=305596057]
+offset_left = 944.0
+offset_top = 135.0
+offset_right = 1090.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_font_sizes/font_size = 14
+text = "Upgrade: Speed"
+
+[node name="Upg 2 Desc" type="Label" parent="UI" unique_id=664397404]
+offset_left = 944.0
+offset_top = 205.0
+offset_right = 1090.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_font_sizes/font_size = 14
+text = "Upgrade: Momentum"
 
 [node name="Tutorial" type="Control" parent="UI" unique_id=1892516250]
 layout_mode = 3
@@ -375,6 +396,7 @@ offset_top = 583.0
 offset_right = 76.0
 offset_bottom = 608.0
 scale = Vector2(1.3992918, 1.3992918)
+theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vjehv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_obgl4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jsoai")
@@ -387,6 +409,7 @@ offset_top = 583.0
 offset_right = 304.00006
 offset_bottom = 608.0
 scale = Vector2(1.3954034, 1.3954034)
+theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_oa40p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lgilx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8ktx7")
@@ -394,25 +417,30 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8ktx7")
 [node name="Dialogue" type="Label" parent="UI/Tutorial" unique_id=2030920503]
 texture_filter = 1
 layout_mode = 0
-offset_left = 22.0
-offset_top = 529.0
-offset_right = 315.0
-offset_bottom = 565.0
-theme_override_fonts/font = ExtResource("1_xkndl")
-theme_override_font_sizes/font_size = 16
-text = "hi"
+offset_left = 28.0
+offset_top = 530.0
+offset_right = 321.0
+offset_bottom = 566.0
+theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_font_sizes/font_size = 20
+text = "Hi"
 autowrap_mode = 2
 
 [node name="Start Tutorial" type="Button" parent="UI/Tutorial" unique_id=171098884]
 texture_filter = 1
 layout_mode = 0
-offset_left = 947.0
-offset_top = 298.0
-offset_right = 1097.0
-offset_bottom = 343.0
-theme_override_fonts/font = ExtResource("1_xkndl")
+offset_left = 944.0
+offset_top = 306.0
+offset_right = 1090.0
+offset_bottom = 351.0
+theme_override_fonts/font = ExtResource("21_bisgb")
 text = "Start
 Tutorial"
+
+[node name="Tutorial Description" type="Label" parent="UI/Tutorial" unique_id=1246340540]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/Tutorial" unique_id=722616852]
 texture_filter = 1
