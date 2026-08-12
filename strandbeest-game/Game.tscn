@@ -293,6 +293,7 @@ script = ExtResource("4_sb48q")
 [node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
 texture_filter = 1
 position = Vector2(576, 608)
+texture = ExtResource("21_y5ctq")
 script = ExtResource("16_wuoie")
 
 [node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
@@ -324,6 +325,7 @@ sprite_frames = SubResource("SpriteFrames_gta21")
 animation = &"Crab Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab (narrator)" unique_id=2120320153]
+position = Vector2(-400, -570)
 shape = SubResource("RectangleShape2D_s33ni")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=180538813]
@@ -348,9 +350,9 @@ text = "Upgrade 1"
 [node name="Upgrade 2" type="Button" parent="UI" unique_id=1708285578]
 texture_filter = 1
 offset_left = 944.0
-offset_top = 234.0
+offset_top = 274.0
 offset_right = 1090.0
-offset_bottom = 274.0
+offset_bottom = 314.0
 theme_override_fonts/font = ExtResource("21_bisgb")
 text = "Upgrade 2"
 
@@ -368,9 +370,9 @@ text = "Upgrade: Speed tolerance
 [node name="Upg 2 Desc" type="Label" parent="UI" unique_id=664397404]
 texture_filter = 1
 offset_left = 944.0
-offset_top = 207.0
+offset_top = 247.0
 offset_right = 1112.0
-offset_bottom = 234.0
+offset_bottom = 274.0
 theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_font_sizes/font_size = 12
 text = "Upgrade: 
@@ -379,11 +381,11 @@ Walking momentum"
 [node name="Pipes Amount" type="Label" parent="UI" unique_id=188482667]
 texture_filter = 1
 offset_left = 944.0
-offset_top = 72.0
+offset_top = 80.0
 offset_right = 1090.0
-offset_bottom = 97.0
+offset_bottom = 105.0
 theme_override_fonts/font = ExtResource("21_bisgb")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 18
 text = "Pipes: 0"
 script = ExtResource("23_w7ht3")
 
@@ -446,9 +448,9 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 0
 offset_left = 944.0
-offset_top = 354.0
+offset_top = 523.0
 offset_right = 1090.0
-offset_bottom = 399.0
+offset_bottom = 568.0
 theme_override_fonts/font = ExtResource("21_bisgb")
 text = "Start
 Tutorial"

@@ -2,6 +2,8 @@ extends Sprite2D
 
 # All notes for cloud is on cloud_1.gd
 
+@onready var player = get_parent()
+
 @export var radius: float = 5.0
 @export var cycle_seconds: float = 6.0
 @export var phase_offset: float = 1.0
