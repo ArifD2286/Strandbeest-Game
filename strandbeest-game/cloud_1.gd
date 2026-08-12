@@ -8,11 +8,17 @@ extends Sprite2D
 @onready var player = get_parent()
 
 @export var radius: float = 10.0
-@export var charging_radius: float = 5.0
+@export var charging_radius: float = 2.0
 @export var burst_radius: float = 20.0
+
+# The variables below doesn't make the duration for the animation state, it is only for the speed of the circle movement / how long
+# it takes for 1 whole loop.
+# For the duration of burst state (since its the only independent animation, whereas idle and charging relies on the player),
+# it is declared in player.gd
 @export var cycle_seconds: float = 5.0
 @export var charging_seconds: float = 1.0
 @export var burst_seconds: float = 3.0
+
 @export var phase_offset: float = 0.0
 
 var _rest_position: Vector2
@@ -38,12 +44,12 @@ func _process(delta: float) -> void:
 			position.x = _rest_position.x + radius * sin(_omega * _t)
 			position.y = _rest_position.y + radius * cos(_omega * _t)
 		"Charging":
-			_t = delta
+			_t += delta
 			_omega = TAU / charging_seconds
 			position.x = _rest_position.x + charging_radius * sin(_omega * _t)
 			position.y = _rest_position.y + charging_radius * cos(_omega * _t)
 		"Burst":
-			_t = delta
+			_t += delta
 			_omega = TAU / burst_seconds
 			position.x = _rest_position.x + burst_radius * sin(_omega * _t)
 			position.y = _rest_position.y + burst_radius * cos(_omega * _t)

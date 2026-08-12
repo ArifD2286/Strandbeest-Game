@@ -292,16 +292,16 @@ script = ExtResource("4_sb48q")
 
 [node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
 texture_filter = 1
-position = Vector2(576, 608)
-texture = ExtResource("21_y5ctq")
+position = Vector2(576, 609)
+texture = ExtResource("18_wuoie")
 script = ExtResource("16_wuoie")
 
 [node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
-position = Vector2(576, 608)
+position = Vector2(576, 609)
 script = ExtResource("17_bvhbk")
 
 [node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
-position = Vector2(576, 608)
+position = Vector2(576, 609)
 script = ExtResource("18_cpsxm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]

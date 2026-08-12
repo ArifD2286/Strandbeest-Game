@@ -12,3 +12,5 @@ extends Node2D
 # The amount of pipes gained by a player varies with their winning time, the longer they took for the strandbeest to cross
 # the line, the lower they get. But to keep things simple we only give either 50 or 25 pipes.
 # The pipes then get to be used to spend on upgrades
+
+var game_playing: bool = false
