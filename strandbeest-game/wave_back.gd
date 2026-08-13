@@ -26,7 +26,7 @@ extends Sprite2D
 # This is for the range of the movement of the waves
 @export var reach: float = 320.0
 # Below is for the time each full cycle lasts
-@export var cycle_seconds: float = 6.0
+@export var cycle_seconds: float = 8.0
 # Offset, we will use different value for other layers
 @export var phase_offset: float = 0.0
 

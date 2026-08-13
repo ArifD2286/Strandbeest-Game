@@ -3,7 +3,7 @@ extends Sprite2D
 # Major notes will be on [wave_back.gd]
 
 @export var reach: float = 320.0
-@export var cycle_seconds: float = 6.0
+@export var cycle_seconds: float = 8.0
 @export var phase_offset: float = 0.0
 
 var _rest_x: float

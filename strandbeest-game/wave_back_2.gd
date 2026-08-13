@@ -5,7 +5,7 @@ extends Sprite2D
 # This way we can make the waves look more realistic by showing that the water is dragged by the sand's surface
 
 @export var reach: float = 320.0
-@export var cycle_seconds: float = 6.0
+@export var cycle_seconds: float = 8.0
 @export var phase_offset: float = -0.1
 
 

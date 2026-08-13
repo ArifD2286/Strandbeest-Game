@@ -6,7 +6,7 @@ extends Sprite2D
 # This would be the water going into sand effect
 
 @export var reach: float = 340.0
-@export var cycle_seconds: float = 6.0
+@export var cycle_seconds: float = 8.0
 @export var phase_offset: float = -0.1
 @export var fade_seconds: float = 2.0
 
