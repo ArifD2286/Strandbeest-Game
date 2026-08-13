@@ -18,3 +18,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_t += delta
 	position.x = _rest_x + reach * sin(_omega * _t)
+	modulate.a = sin(_omega * _t)

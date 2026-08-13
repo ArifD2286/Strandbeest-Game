@@ -8,7 +8,7 @@ extends Sprite2D
 @export var reach: float = 340.0
 @export var cycle_seconds: float = 8.0
 @export var phase_offset: float = -0.1
-@export var fade_seconds: float = 2.0
+@export var fade_seconds: float = 1.5
 
 var _rest_x: float
 var _omega: float
