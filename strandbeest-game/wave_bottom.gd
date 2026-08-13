@@ -32,19 +32,19 @@ func _process(delta: float) -> void:
 			# Here is where the "fading" part comes in
 			if _t >= cycle_seconds / 4.0:
 				position.x = _rest_x + reach
-				_t = 0.0
+				_t -= cycle_seconds / 4.0
 				_state = "Fading"
 		"Fading":
 			_t += delta
 			# Code below is the "fading" effect,
-			modulate.a = clamp(1.0 - _t / fade_seconds, 0.0, 1.0)
+			modulate.a = clamp(1.0 - _t / fade_seconds, 0.0, 0.2)
 			if _t >= fade_seconds:
 				position.x = _rest_x
 				modulate.a = 0.2
-				_t = 0.0
+				_t -= fade_seconds
 				_state = "Waiting"
 		"Waiting":
 			_t += delta
 			if _t >= _wait_time:
-				_t = 0.0
+				_t -= _wait_time
 				_state = "Entering"
