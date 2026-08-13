@@ -43,6 +43,7 @@ func _process(delta: float) -> void:
 			# This works similarly to [position.x] or [position.y] where the .x or .y would state which part of the coordinate we want.
 			position.x = _rest_position.x + radius * sin(_omega * _t)
 			position.y = _rest_position.y + radius * cos(_omega * _t)
+
 		"Charging":
 			_t += delta
 			_omega = TAU / charging_seconds

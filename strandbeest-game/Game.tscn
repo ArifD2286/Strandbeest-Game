@@ -305,6 +305,7 @@ position = Vector2(576, 609)
 script = ExtResource("18_cpsxm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
+position = Vector2(0, 40)
 shape = SubResource("RectangleShape2D_gta21")
 
 [node name="Line" type="ColorRect" parent="." unique_id=225182711]

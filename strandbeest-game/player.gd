@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 
+@export var charge_duration: float = 2.0
+
+var pull_fraction: float = 0.0
+var _charge_t: float = 0.0
 var _state: String = "Idle"
 var _t: float = 0.0
 var reset_time: float = 2.0
@@ -10,10 +14,21 @@ func _process(delta: float) -> void:
 	velocity.y = 0
 	velocity.x = 0
 
+# If the player presses onto their space button, the state would go into the charging state
 	if _state == "Idle" and Input.is_action_just_pressed("shooting"):
 		_state = "Charging"
+		_charge_t = 0.0
+
+# If they release their space button, it goes into the shooting state.
+# This state will be referred by cloud_1/2/3.gd for their animation/behaviour
 	elif _state == "Charging" and Input.is_action_just_released("shooting"):
 		_state = "Burst"
+
+	if _state == "Charging":
+		_charge_t += delta
+		_charge_t = clamp(_charge_t, 0.0, charge_duration)
+		pull_fraction = (1.0 - cos(PI * _charge_t / charge_duration)) / 2.0
+
 	if _state == "Burst":
 		_t += delta
 		if _t >= reset_time:
