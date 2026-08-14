@@ -288,24 +288,23 @@ text = "Strandbeest
 Game"
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
+position = Vector2(576, 609)
 script = ExtResource("4_sb48q")
 
 [node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
 texture_filter = 1
-position = Vector2(576, 609)
+position = Vector2(8, 8)
 texture = ExtResource("18_wuoie")
 script = ExtResource("16_wuoie")
 
 [node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
-position = Vector2(576, 609)
 script = ExtResource("17_bvhbk")
 
 [node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
-position = Vector2(576, 609)
 script = ExtResource("18_cpsxm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
-position = Vector2(0, 40)
+position = Vector2(-576, -569)
 shape = SubResource("RectangleShape2D_gta21")
 
 [node name="Line" type="ColorRect" parent="." unique_id=225182711]
