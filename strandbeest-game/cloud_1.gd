@@ -36,11 +36,17 @@ extends Sprite2D
 @export var cycle_seconds: float = 5.0
 @export var charge_cycle_seconds: float = 1.0
 @export var burst_seconds: float = 1.5
+
+@export var settle_duration: float = 0.5
+
 @export var phase_offset: float = 0.0
 
 var _rest_position: Vector2
 var _omega: float
 var _t: float
+
+var _settle_t: float = 0.0
+var _prev_state: String = "Idle"
 
 func _ready() -> void:
 	_t = phase_offset
@@ -50,26 +56,33 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if player._state == "Idle" and _prev_state != "Idle":
+		_settle_t = 0.0
 	match player._state:
 		"Idle":
 			_t += delta
 			_omega = TAU / cycle_seconds
-			position.x = _rest_position.x + radius * sin(_omega * _t)
-			position.y = _rest_position.y + radius * cos(_omega * _t)
+			_settle_t += delta
+			_settle_t = clamp(_settle_t, 0.0, settle_duration)
+			var settle_fraction = (1.0 - cos(PI * _settle_t / settle_duration)) / 2.0
+			var current_radius = lerp(burst_radius, radius, settle_fraction)
+			position.x = _rest_position.x + current_radius * sin(_omega * _t)
+			position.y = _rest_position.y + current_radius * cos(_omega * _t)
 		"Charging":
 			_t += delta
-			_omega = TAU / charge_cycle_seconds
+			_omega = TAU / cycle_seconds
 			var current_centre = _rest_position.lerp(charge_target, player.pull_fraction)
 			var current_radius = lerp(radius, charge_radius, player.pull_fraction)
 			position.x = current_centre.x + current_radius * sin(_omega * _t)
 			position.y = current_centre.y + current_radius * cos(_omega * _t)
 			
-			# Burst would be similar to charging but moving in the opposite direction.
+		# Burst would be similar to charging but moving in the opposite direction.
 			
 		"Burst":
 			_t += delta
-			_omega = TAU / burst_seconds
+			_omega = TAU / cycle_seconds
 			var current_centre = charge_target.lerp(_rest_position, player.burst_fraction)
-			var current_radius = lerp(radius, burst_radius, player.burst_fraction)
+			var current_radius = lerp(charge_radius, burst_radius, player.burst_fraction)
 			position.x = current_centre.x + current_radius * sin(_omega * _t)
 			position.y = current_centre.y + current_radius * cos(_omega * _t)
+	_prev_state = player._state
