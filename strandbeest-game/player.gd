@@ -4,10 +4,11 @@ extends CharacterBody2D
 @export var charge_duration: float = 0.5
 
 var pull_fraction: float = 0.0
+var burst_fraction: float = 0.0
 var _charge_t: float = 0.0
 var _state: String = "Idle"
 var _t: float = 0.0
-var reset_time: float = 0.0
+var reset_time: float = 3.0
 
 
 func _process(delta: float) -> void:
@@ -37,6 +38,8 @@ func _process(delta: float) -> void:
 
 	if _state == "Burst":
 		_t += delta
+		_t = clamp(_t, 0.0, reset_time)
+		burst_fraction = (1.0 - cos(PI * _t / reset_time)) / 2.0
 		if _t >= reset_time:
 			_t = 0.0
 			_state = "Idle"

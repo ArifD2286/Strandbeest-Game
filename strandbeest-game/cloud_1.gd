@@ -3,12 +3,18 @@ extends Sprite2D
 # Notes:
 # We can use states again to have variation of animation for different scenarios.
 
-# pull_fraction in player.gd is a var with a smooth change from 0 to 1,
+# During "Charging" state, we want the cloud to move from their original position to the player node's 
+# (target position, we use [Vector2.ZERO]) position to have the "getting sucked in" to suggest the "charging" motion.
+
+# We want the cloud to keep on orbiting/moving in circles, so to keep that motion we can move the cloud's
+# centre of orbiting during change of state transition.
+
+# we can use a [.lerp()] (lerp is short for linear interpolation).
+# It is an operation for Vector2 for blending in between two points using a "0 to 1".
+
+# [pull_fraction] in player.gd is a var with a smooth change from 0 to 1,
 # we can use this for the shift of position of the cloud.
 # Say that 0 is when the cloud sits at its resting pos and 1 is where the cloud sits at its target spot.
-
-# For the movement of the clouds, we can use a [.lerp()] (lerp is short for linear interpolation).
-# It is an operation for Vector2 for blending in between two points using a "0 to 1".
 
 # Vector2.ZERO is the target point for cloud1/2/3.gd to go to from their own initial position
 # as [position] are local coordinates for the Player (CharacterBody2D) node.
@@ -17,7 +23,8 @@ extends Sprite2D
 @onready var player = get_parent()
 
 @export var radius: float = 10.0
-@export var burst_radius: float = 20.0
+@export var charge_radius: float = 5.0
+@export var burst_radius: float = 25.0
 
 # The variables below doesn't make the duration for the animation state,
 # it is only for the speed of the circle movement / how long it takes for 1 whole loop.
@@ -27,7 +34,8 @@ extends Sprite2D
 # it is declared in player.gd
 
 @export var cycle_seconds: float = 5.0
-@export var burst_seconds: float = 3.0
+@export var charge_cycle_seconds: float = 1.0
+@export var burst_seconds: float = 1.5
 @export var phase_offset: float = 0.0
 
 var _rest_position: Vector2
@@ -50,8 +58,18 @@ func _process(delta: float) -> void:
 			position.y = _rest_position.y + radius * cos(_omega * _t)
 		"Charging":
 			_t += delta
-			position = _rest_position.lerp(charge_target, player.pull_fraction)
+			_omega = TAU / charge_cycle_seconds
+			var current_centre = _rest_position.lerp(charge_target, player.pull_fraction)
+			var current_radius = lerp(radius, charge_radius, player.pull_fraction)
+			position.x = current_centre.x + current_radius * sin(_omega * _t)
+			position.y = current_centre.y + current_radius * cos(_omega * _t)
+			
+			# Burst would be similar to charging but moving in the opposite direction.
+			
 		"Burst":
 			_t += delta
-			position.x = _rest_position.x + burst_radius * sin(_omega * _t)
-			position.y = _rest_position.y + burst_radius * cos(_omega * _t)
+			_omega = TAU / burst_seconds
+			var current_centre = charge_target.lerp(_rest_position, player.burst_fraction)
+			var current_radius = lerp(radius, burst_radius, player.burst_fraction)
+			position.x = current_centre.x + current_radius * sin(_omega * _t)
+			position.y = current_centre.y + current_radius * cos(_omega * _t)
