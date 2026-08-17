@@ -6,6 +6,6 @@ func _process(delta: float) -> void:
 
 func update_text() -> void:
 	# we cannot use [ "pipes" + String(GameData.pipes) ] as
-	# the string() doest take an int (pipes var from game data is an int) directly
+	# the string() doesn't take an int (pipes var from game data is an int) directly
 	# so we need to use str() instead
 	text = "Pipes: " + str(GameData.pipes)

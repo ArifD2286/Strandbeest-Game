@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://brlirbmaowloi" path="res://assets/next arrow 1.png" id="24_y5ctq"]
 [ext_resource type="Texture2D" uid="uid://dqrbwqq1g7x8c" path="res://assets/next arrow 2.png" id="25_w7ht3"]
 [ext_resource type="PackedScene" uid="uid://8rebxu62mabb" path="res://wind_charge.tscn" id="26_suycs"]
+[ext_resource type="Script" uid="uid://hql8465ibnhm" path="res://upgrade_1.gd" id="30_xwkxq"]
+[ext_resource type="Script" uid="uid://cp0exg6qvqiw2" path="res://upgrade_2.gd" id="31_wdm1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gta21"]
 
@@ -298,38 +300,38 @@ text = "Strandbeest
 Game"
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
-position = Vector2(576, 609)
+position = Vector2(576, 603)
 script = ExtResource("4_sb48q")
 
 [node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
 texture_filter = 1
-position = Vector2(8, 8)
-scale = Vector2(0.29935405, 0.29935405)
+position = Vector2(24, 8)
+scale = Vector2(0.3906177, 0.3906177)
 texture = ExtResource("15_8ktx7")
 script = ExtResource("16_wuoie")
 
 [node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
-position = Vector2(-16, 16)
-scale = Vector2(0.24437208, 0.24437208)
+position = Vector2(-24, 16)
+scale = Vector2(0.29298213, 0.29298213)
 texture = ExtResource("17_hwsgv")
 script = ExtResource("17_bvhbk")
 
 [node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
-position = Vector2(-4, -4)
-scale = Vector2(0.2797978, 0.2797978)
+position = Vector2(8, -24)
+scale = Vector2(0.334858, 0.334858)
 texture = ExtResource("19_gebyw")
 script = ExtResource("18_cpsxm")
 
 [node name="Cloud4" type="Sprite2D" parent="Player" unique_id=835204111]
-position = Vector2(32, -8)
-scale = Vector2(0.15075834, 0.15075834)
-texture = ExtResource("15_8ktx7")
+position = Vector2(55, 0)
+scale = Vector2(0.26606718, 0.26606718)
+texture = ExtResource("17_hwsgv")
 script = ExtResource("21_aeq37")
 
 [node name="Cloud5" type="Sprite2D" parent="Player" unique_id=124417070]
-position = Vector2(-32, 0)
-scale = Vector2(0.2514219, 0.2514219)
-texture = ExtResource("17_hwsgv")
+position = Vector2(-60, 0)
+scale = Vector2(0.3523259, 0.3523259)
+texture = ExtResource("15_8ktx7")
 script = ExtResource("22_suycs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
@@ -370,6 +372,7 @@ offset_right = 1090.0
 offset_bottom = 202.0
 theme_override_fonts/font = ExtResource("21_bisgb")
 text = "Upgrade 1"
+script = ExtResource("30_xwkxq")
 
 [node name="Upgrade 2" type="Button" parent="UI" unique_id=1708285578]
 texture_filter = 1
@@ -379,6 +382,7 @@ offset_right = 1090.0
 offset_bottom = 314.0
 theme_override_fonts/font = ExtResource("21_bisgb")
 text = "Upgrade 2"
+script = ExtResource("31_wdm1y")
 
 [node name="Upg 1 Desc" type="Label" parent="UI" unique_id=305596057]
 texture_filter = 1
