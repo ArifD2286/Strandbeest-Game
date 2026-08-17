@@ -22,8 +22,8 @@ extends Sprite2D
 @export var charge_target: Vector2 = Vector2.ZERO
 @onready var player = get_parent()
 
-@export var radius: float = 10.0
-@export var charge_radius: float = 5.0
+@export var radius: float = 15.0
+@export var charge_radius: float = 10.0
 @export var burst_radius: float = 25.0
 
 # The variables below doesn't make the duration for the animation state,
@@ -33,9 +33,7 @@ extends Sprite2D
 # whereas idle and charging relies on the player),
 # it is declared in player.gd
 
-@export var cycle_seconds: float = 5.0
-@export var charge_cycle_seconds: float = 1.0
-@export var burst_seconds: float = 1.5
+@export var cycle_seconds: float = 4.0
 
 @export var settle_duration: float = 0.5
 

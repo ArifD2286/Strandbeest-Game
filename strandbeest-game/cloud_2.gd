@@ -5,17 +5,15 @@ extends Sprite2D
 @export var charge_target: Vector2 = Vector2.ZERO
 @onready var player = get_parent()
 
-@export var radius: float = 10.0
-@export var charge_radius: float = 5.0
-@export var burst_radius: float = 25.0
+@export var radius: float = 7.5
+@export var charge_radius: float = 4.0
+@export var burst_radius: float = 12.5
 
-@export var cycle_seconds: float = 5.0
-@export var charge_cycle_seconds: float = 1.0
-@export var burst_seconds: float = 1.5
+@export var cycle_seconds: float = 2.5
 
 @export var settle_duration: float = 0.5
 
-@export var phase_offset: float = 0.0
+@export var phase_offset: float = 2.0
 
 var _rest_position: Vector2
 var _omega: float

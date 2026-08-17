@@ -8,7 +8,7 @@ var burst_fraction: float = 0.0
 var _charge_t: float = 0.0
 var _state: String = "Idle"
 var _t: float = 0.0
-var reset_time: float = 3.0
+var reset_time: float = 1.0
 
 
 func _process(delta: float) -> void:

@@ -14,16 +14,21 @@
 [ext_resource type="Script" uid="uid://bnmvnr3blrbbm" path="res://wave_front.gd" id="6_yx171"]
 [ext_resource type="Texture2D" uid="uid://bqtv4may3o114" path="res://assets/bubble.png" id="9_elkpi"]
 [ext_resource type="Texture2D" uid="uid://dtxg7f0pogw41" path="res://assets/text-box.png" id="11_yyih5"]
+[ext_resource type="Texture2D" uid="uid://dmyv5tvpyqni2" path="res://assets/cloud1.png" id="15_8ktx7"]
 [ext_resource type="Script" uid="uid://c50wdm4bkhaaq" path="res://cloud_1.gd" id="16_wuoie"]
 [ext_resource type="Script" uid="uid://dxp43xdvev1xb" path="res://cloud_2.gd" id="17_bvhbk"]
+[ext_resource type="Texture2D" uid="uid://bhx6jipdedw5m" path="res://assets/cloud2.png" id="17_hwsgv"]
 [ext_resource type="Script" uid="uid://dpxxfspiruidw" path="res://crab.gd" id="18_bvhbk"]
 [ext_resource type="Script" uid="uid://bm8kge4b8egxa" path="res://cloud_3.gd" id="18_cpsxm"]
 [ext_resource type="Texture2D" uid="uid://osjvb633a141" path="res://assets/crab idle.png" id="18_wuoie"]
+[ext_resource type="Texture2D" uid="uid://bgjk76m21bspr" path="res://assets/cloud3.png" id="19_gebyw"]
 [ext_resource type="Script" uid="uid://dcw15ic0gam3p" path="res://tutorial.gd" id="20_cpsxm"]
 [ext_resource type="Texture2D" uid="uid://uv5kp0kxoone" path="res://assets/Sand.png" id="20_hmewc"]
+[ext_resource type="Script" uid="uid://cn33n3of0uggk" path="res://cloud_4.gd" id="21_aeq37"]
 [ext_resource type="FontFile" uid="uid://di0uluy8om5r5" path="res://Minecraft.ttf" id="21_bisgb"]
 [ext_resource type="Texture2D" uid="uid://dkq2r1fo3wcuy" path="res://assets/button panel.png" id="21_y5ctq"]
 [ext_resource type="Texture2D" uid="uid://diwvdpxtgtmhw" path="res://assets/back arrow 1.png" id="22_jsoai"]
+[ext_resource type="Script" uid="uid://bswesi3n1lsdq" path="res://cloud_5.gd" id="22_suycs"]
 [ext_resource type="Texture2D" uid="uid://dwbuf621uj8gt" path="res://assets/back arrow 2.png" id="23_bisgb"]
 [ext_resource type="Script" uid="uid://dr1sltrdkirre" path="res://pipes_amount.gd" id="23_w7ht3"]
 [ext_resource type="Texture2D" uid="uid://brlirbmaowloi" path="res://assets/next arrow 1.png" id="24_y5ctq"]
@@ -200,6 +205,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cyb2"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjehv"]
 texture = ExtResource("22_jsoai")
 
@@ -294,25 +301,37 @@ script = ExtResource("4_sb48q")
 [node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
 texture_filter = 1
 position = Vector2(8, 8)
-texture = ExtResource("18_wuoie")
+scale = Vector2(0.29935405, 0.29935405)
+texture = ExtResource("15_8ktx7")
 script = ExtResource("16_wuoie")
 
 [node name="Cloud2" type="Sprite2D" parent="Player" unique_id=246961204]
+position = Vector2(-16, 16)
+scale = Vector2(0.24437208, 0.24437208)
+texture = ExtResource("17_hwsgv")
 script = ExtResource("17_bvhbk")
 
 [node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
+position = Vector2(-4, -4)
+scale = Vector2(0.2797978, 0.2797978)
+texture = ExtResource("19_gebyw")
 script = ExtResource("18_cpsxm")
+
+[node name="Cloud4" type="Sprite2D" parent="Player" unique_id=835204111]
+position = Vector2(32, -8)
+scale = Vector2(0.15075834, 0.15075834)
+texture = ExtResource("15_8ktx7")
+script = ExtResource("21_aeq37")
+
+[node name="Cloud5" type="Sprite2D" parent="Player" unique_id=124417070]
+position = Vector2(-32, 0)
+scale = Vector2(0.2514219, 0.2514219)
+texture = ExtResource("17_hwsgv")
+script = ExtResource("22_suycs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
 position = Vector2(-576, -569)
 shape = SubResource("RectangleShape2D_gta21")
-
-[node name="Line" type="ColorRect" parent="." unique_id=225182711]
-offset_left = 496.0
-offset_top = 608.0
-offset_right = 656.0
-offset_bottom = 610.0
-color = Color(0.27058825, 0.27058825, 0.27058825, 1)
 
 [node name="Crab (narrator)" type="CharacterBody2D" parent="." unique_id=797984074]
 position = Vector2(400, 590)
@@ -327,6 +346,13 @@ animation = &"Crab Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab (narrator)" unique_id=2120320153]
 position = Vector2(-400, -570)
 shape = SubResource("RectangleShape2D_s33ni")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=829865986]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=752129220]
+shape = SubResource("RectangleShape2D_7cyb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1903342676]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=180538813]
 
