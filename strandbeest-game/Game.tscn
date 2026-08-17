@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://fcdahqbonwc2" path="res://wave_middle.gd" id="5_2vekm"]
 [ext_resource type="Texture2D" uid="uid://b7rvbt3c61c5y" path="res://assets/wave-back.png" id="6_qjyg3"]
 [ext_resource type="Script" uid="uid://bnmvnr3blrbbm" path="res://wave_front.gd" id="6_yx171"]
+[ext_resource type="Texture2D" uid="uid://cmbmr1m3axpoj" path="res://assets/waves-middle.png" id="9_202ut"]
 [ext_resource type="Texture2D" uid="uid://bqtv4may3o114" path="res://assets/bubble.png" id="9_elkpi"]
 [ext_resource type="Texture2D" uid="uid://dtxg7f0pogw41" path="res://assets/text-box.png" id="11_yyih5"]
 [ext_resource type="Texture2D" uid="uid://dmyv5tvpyqni2" path="res://assets/cloud1.png" id="15_8ktx7"]
@@ -33,6 +34,7 @@
 [ext_resource type="Script" uid="uid://dr1sltrdkirre" path="res://pipes_amount.gd" id="23_w7ht3"]
 [ext_resource type="Texture2D" uid="uid://brlirbmaowloi" path="res://assets/next arrow 1.png" id="24_y5ctq"]
 [ext_resource type="Texture2D" uid="uid://dqrbwqq1g7x8c" path="res://assets/next arrow 2.png" id="25_w7ht3"]
+[ext_resource type="PackedScene" uid="uid://8rebxu62mabb" path="res://wind_charge.tscn" id="26_suycs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gta21"]
 
@@ -205,8 +207,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cyb2"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjehv"]
 texture = ExtResource("22_jsoai")
 
@@ -266,6 +266,9 @@ script = ExtResource("3_t88pq")
 
 [node name="Wave Middle" type="Sprite2D" parent="Sea_Waves" unique_id=1957156367]
 texture_filter = 1
+scale = Vector2(4.56651, 4.56651)
+texture = ExtResource("9_202ut")
+offset = Vector2(0, 71.1)
 script = ExtResource("5_2vekm")
 
 [node name="Wave Front" type="Sprite2D" parent="Sea_Waves" unique_id=1695762833]
@@ -347,12 +350,7 @@ animation = &"Crab Idle"
 position = Vector2(-400, -570)
 shape = SubResource("RectangleShape2D_s33ni")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=829865986]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=752129220]
-shape = SubResource("RectangleShape2D_7cyb2")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1903342676]
+[node name="Wind charge" parent="." unique_id=1438876668 instance=ExtResource("26_suycs")]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=180538813]
 

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const WindCharge = preload("res://wind_charge.tscn")
+
 @onready var tutorial = get_node("/root/Node2D/UI/Tutorial")
 @export var charge_duration: float = 0.5
 
@@ -23,6 +25,9 @@ func _process(delta: float) -> void:
 # If they release their space button, it goes into the bursting/shooting wind state.
 # This state will be referred by cloud_1/2/3.gd for their animation/behaviour
 	elif _state == "Charging" and Input.is_action_just_released("shooting") and not tutorial.tutorial_playing == true:
+		var wind_charge = WindCharge.instantiate()
+		wind_charge.global_position = global_position
+		get_tree().current_scene.add_child(wind_charge)
 		_state = "Burst"
 		_t = 0.0
 

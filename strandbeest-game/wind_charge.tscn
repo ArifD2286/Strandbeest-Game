@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://8rebxu62mabb"]
+
+[ext_resource type="Script" uid="uid://bu72b7xu5tsvf" path="res://wind_charge.gd" id="1_10pnh"]
+[ext_resource type="Texture2D" uid="uid://qoxvochyuyxo" path="res://assets/wind charge.png" id="2_1h4lt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujpka"]
+atlas = ExtResource("2_1h4lt")
+region = Rect2(0, 0, 70, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mntvj"]
+atlas = ExtResource("2_1h4lt")
+region = Rect2(70, 0, 70, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyifr"]
+atlas = ExtResource("2_1h4lt")
+region = Rect2(140, 0, 70, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3vi6"]
+atlas = ExtResource("2_1h4lt")
+region = Rect2(210, 0, 70, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfic7"]
+atlas = ExtResource("2_1h4lt")
+region = Rect2(280, 0, 70, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4dm5"]
+atlas = ExtResource("2_1h4lt")
+region = Rect2(350, 0, 70, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g01y4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujpka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mntvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyifr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3vi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfic7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4dm5")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vxuk"]
+size = Vector2(54.98345, 51.05606)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1438876668]
+script = ExtResource("1_10pnh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1886314497]
+shape = SubResource("RectangleShape2D_s33ni")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1821786004]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g01y4")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=617833582]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2090849005]
+position = Vector2(1.4901161e-07, 0)
+scale = Vector2(0.5092442, 0.5092442)
+shape = SubResource("RectangleShape2D_2vxuk")
