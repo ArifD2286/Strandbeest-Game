@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position.y -= travel_speed * delta
+	wind_charge_animation.play("default")
 
 func _hitbox_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("Strandbeest"):
