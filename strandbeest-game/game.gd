@@ -18,3 +18,7 @@ var game_playing: bool = true
 
 func game_over():
 	game_playing = false
+
+func win():
+	game_playing = false
+	print("YOU WON!!")

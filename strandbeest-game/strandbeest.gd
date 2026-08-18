@@ -24,7 +24,8 @@ func _ready() -> void:
 func _hitbox_area_entered(area: Area2D)	-> void:
 	if area.get_parent().is_in_group("Wind charge"):
 		current_speed += speed_boost
-
+	elif area.get_parent().is_in_group("Finish line"):
+		game.win()
 
 func _physics_process(delta: float) -> void:
 	if not game.game_playing:
@@ -34,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	max_speed = GameData.speed_level * 50.0 + 75.0
 	current_speed = clamp(current_speed - decay_rate * delta, 0.0, max_speed)
 
-	animation.speed_scale = current_speed / 75.0
+	animation.speed_scale = current_speed / 40.0
 
 	position.y -= current_speed * delta
 	if current_speed >= max_speed:
