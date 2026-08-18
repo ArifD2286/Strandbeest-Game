@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://8rebxu62mabb" path="res://wind_charge.tscn" id="26_suycs"]
 [ext_resource type="Script" uid="uid://hql8465ibnhm" path="res://upgrade_1.gd" id="30_xwkxq"]
 [ext_resource type="Script" uid="uid://cp0exg6qvqiw2" path="res://upgrade_2.gd" id="31_wdm1y"]
+[ext_resource type="Script" uid="uid://d2ibvx7cujejb" path="res://strandbeest.gd" id="38_wdm1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gta21"]
 
@@ -209,6 +210,18 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwkxq"]
+animations = [{
+"frames": [],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cyb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vnet"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjehv"]
 texture = ExtResource("22_jsoai")
 
@@ -353,6 +366,21 @@ position = Vector2(-400, -570)
 shape = SubResource("RectangleShape2D_s33ni")
 
 [node name="Wind charge" parent="." unique_id=1438876668 instance=ExtResource("26_suycs")]
+
+[node name="Strandbeest" type="CharacterBody2D" parent="." unique_id=1374923182]
+position = Vector2(576, 533)
+script = ExtResource("38_wdm1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Strandbeest" unique_id=632090859]
+sprite_frames = SubResource("SpriteFrames_xwkxq")
+
+[node name="Hitbox" type="Area2D" parent="Strandbeest" unique_id=285046338]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Strandbeest/Hitbox" unique_id=344003318]
+shape = SubResource("RectangleShape2D_7cyb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Strandbeest" unique_id=1584820677]
+shape = SubResource("RectangleShape2D_7vnet")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=180538813]
 

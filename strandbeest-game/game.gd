@@ -14,3 +14,7 @@ extends Node2D
 # The pipes then get to be used to spend on upgrades
 
 var game_playing: bool = false
+
+
+func game_over():
+	game_playing = false
