@@ -13,7 +13,7 @@ extends Node2D
 # the line, the lower they get. But to keep things simple we only give either 50 or 25 pipes.
 # The pipes then get to be used to spend on upgrades
 
-var game_playing: bool = false
+var game_playing: bool = true
 
 
 func game_over():

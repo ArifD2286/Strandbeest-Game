@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bqtv4may3o114" path="res://assets/bubble.png" id="9_elkpi"]
 [ext_resource type="Texture2D" uid="uid://dtxg7f0pogw41" path="res://assets/text-box.png" id="11_yyih5"]
 [ext_resource type="Texture2D" uid="uid://dmyv5tvpyqni2" path="res://assets/cloud1.png" id="15_8ktx7"]
+[ext_resource type="Texture2D" uid="uid://c8d6nkrcv4dk1" path="res://assets/strandbeest.png" id="16_hxy8k"]
 [ext_resource type="Script" uid="uid://c50wdm4bkhaaq" path="res://cloud_1.gd" id="16_wuoie"]
 [ext_resource type="Script" uid="uid://dxp43xdvev1xb" path="res://cloud_2.gd" id="17_bvhbk"]
 [ext_resource type="Texture2D" uid="uid://bhx6jipdedw5m" path="res://assets/cloud2.png" id="17_hwsgv"]
@@ -38,6 +39,160 @@
 [ext_resource type="Script" uid="uid://hql8465ibnhm" path="res://upgrade_1.gd" id="30_xwkxq"]
 [ext_resource type="Script" uid="uid://cp0exg6qvqiw2" path="res://upgrade_2.gd" id="31_wdm1y"]
 [ext_resource type="Script" uid="uid://d2ibvx7cujejb" path="res://strandbeest.gd" id="38_wdm1y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68r7h"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(0, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vltt"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(71, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj2yu"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(142, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iueff"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(213, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7324"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(284, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6tbt"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(355, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5dxo"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(426, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyvha"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(497, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc54d"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(568, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w250u"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(639, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h3yf"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(710, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyc7o"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(781, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds8mp"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(852, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbwgg"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(923, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndmee"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(994, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lua15"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(1065, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qirsl"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(1136, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnh27"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(1207, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw735"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(1278, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvv74"]
+atlas = ExtResource("16_hxy8k")
+region = Rect2(1349, 0, 71, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwkxq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68r7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vltt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj2yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iueff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7324")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6tbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5dxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyvha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc54d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w250u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h3yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyc7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds8mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbwgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndmee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lua15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qirsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnh27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw735")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvv74")
+}],
+"loop": 0,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cyb2"]
+size = Vector2(112, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vnet"]
+size = Vector2(110, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gta21"]
 
@@ -210,18 +365,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xwkxq"]
-animations = [{
-"frames": [],
-"loop": 0,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cyb2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vnet"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjehv"]
 texture = ExtResource("22_jsoai")
 
@@ -312,8 +455,28 @@ theme_override_font_sizes/font_size = 24
 text = "Strandbeest
 Game"
 
+[node name="Strandbeest" type="CharacterBody2D" parent="." unique_id=1374923182]
+position = Vector2(576, 529)
+script = ExtResource("38_wdm1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Strandbeest" unique_id=632090859]
+texture_filter = 1
+scale = Vector2(4.496138, 4.496138)
+sprite_frames = SubResource("SpriteFrames_xwkxq")
+animation = &"Walk"
+
+[node name="Hitbox" type="Area2D" parent="Strandbeest" unique_id=285046338]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Strandbeest/Hitbox" unique_id=344003318]
+position = Vector2(0, -33)
+shape = SubResource("RectangleShape2D_7cyb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Strandbeest" unique_id=1584820677]
+position = Vector2(0, -33)
+shape = SubResource("RectangleShape2D_7vnet")
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
-position = Vector2(576, 603)
+position = Vector2(576, 629)
 script = ExtResource("4_sb48q")
 
 [node name="Cloud1" type="Sprite2D" parent="Player" unique_id=1635146725]
@@ -330,8 +493,8 @@ texture = ExtResource("17_hwsgv")
 script = ExtResource("17_bvhbk")
 
 [node name="Cloud3" type="Sprite2D" parent="Player" unique_id=345094051]
-position = Vector2(8, -24)
-scale = Vector2(0.334858, 0.334858)
+position = Vector2(0, -16)
+scale = Vector2(0.23390722, 0.23390722)
 texture = ExtResource("19_gebyw")
 script = ExtResource("18_cpsxm")
 
@@ -366,21 +529,6 @@ position = Vector2(-400, -570)
 shape = SubResource("RectangleShape2D_s33ni")
 
 [node name="Wind charge" parent="." unique_id=1438876668 instance=ExtResource("26_suycs")]
-
-[node name="Strandbeest" type="CharacterBody2D" parent="." unique_id=1374923182]
-position = Vector2(576, 533)
-script = ExtResource("38_wdm1y")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Strandbeest" unique_id=632090859]
-sprite_frames = SubResource("SpriteFrames_xwkxq")
-
-[node name="Hitbox" type="Area2D" parent="Strandbeest" unique_id=285046338]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Strandbeest/Hitbox" unique_id=344003318]
-shape = SubResource("RectangleShape2D_7cyb2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Strandbeest" unique_id=1584820677]
-shape = SubResource("RectangleShape2D_7vnet")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=180538813]
 
