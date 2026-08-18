@@ -3,6 +3,8 @@ extends CharacterBody2D
 const WindCharge = preload("res://wind_charge.tscn")
 
 @onready var tutorial = get_node("/root/Node2D/UI/Tutorial")
+@onready var game = get_node("/root/Node2D")
+
 @export var charge_duration: float = 0.5
 
 var pull_fraction: float = 0.0
@@ -18,13 +20,13 @@ func _process(delta: float) -> void:
 	velocity.x = 0
 
 # If the player presses onto their space button, the state would go into the charging state
-	if _state == "Idle" and Input.is_action_just_pressed("shooting") and not tutorial.tutorial_playing == true:
+	if _state == "Idle" and Input.is_action_just_pressed("shooting") and not tutorial.tutorial_playing == true and game.game_playing == true:
 		_state = "Charging"
 		_charge_t = 0.0
 
 # If they release their space button, it goes into the bursting/shooting wind state.
 # This state will be referred by cloud_1/2/3.gd for their animation/behaviour
-	elif _state == "Charging" and Input.is_action_just_released("shooting") and not tutorial.tutorial_playing == true:
+	elif _state == "Charging" and Input.is_action_just_released("shooting") and not tutorial.tutorial_playing == true and game.game_playing == true:
 		var wind_charge = WindCharge.instantiate()
 		wind_charge.global_position = global_position
 		get_tree().current_scene.add_child(wind_charge)
@@ -32,7 +34,7 @@ func _process(delta: float) -> void:
 		_t = 0.0
 
 # We also want to put a condition where the player presses DURING the "Burst" state
-	elif _state == "Burst" and Input.is_action_just_pressed("shooting") and not tutorial.tutorial_playing == true:
+	elif _state == "Burst" and Input.is_action_just_pressed("shooting") and not tutorial.tutorial_playing == true and game.game_playing == true:
 		_state = "Charging"
 		_charge_t = 0.0
 
