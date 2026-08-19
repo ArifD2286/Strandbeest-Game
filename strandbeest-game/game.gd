@@ -16,6 +16,9 @@ extends Node2D
 @onready var upgrade_1 = $"UI/Upgrade 1"
 @onready var upgrade_2 = $"UI/Upgrade 2"
 
+@onready var strandbeest = $Strandbeest
+@onready var player = $Player
+
 var game_playing: bool = true
 var round_started: bool = false
 var round_start_time: float = 0.0
@@ -26,7 +29,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if game_playing == false and Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
+		restart_game()
+
 
 func start_round() -> void:
 	if round_started:
@@ -46,3 +50,12 @@ func win():
 		GameData.add_pipes(50)
 	else:
 		GameData.add_pipes(25)
+
+
+func restart_game() -> void:
+	for wind_charge in get_tree().get_nodes_in_group("Wind charge"):
+		wind_charge.queue_free()
+	strandbeest.reset_round()
+	player.reset_round()
+	round_start_time = 0.0
+	game_playing = true

@@ -51,3 +51,11 @@ func _process(delta: float) -> void:
 		if _t >= reset_time:
 			_t = 0.0
 			_state = "Idle"
+
+func reset_round() -> void:
+	_state = "Idle"
+	pull_fraction = 0.0
+	burst_fraction = 0.0
+	_charge_t = 0.0
+	_t = 0.0
+	

@@ -39,6 +39,7 @@
 [ext_resource type="Script" uid="uid://dltf7cktwwpvs" path="res://finish_line.gd" id="30_2t1a5"]
 [ext_resource type="Script" uid="uid://hql8465ibnhm" path="res://upgrade_1.gd" id="30_xwkxq"]
 [ext_resource type="Script" uid="uid://cp0exg6qvqiw2" path="res://upgrade_2.gd" id="31_wdm1y"]
+[ext_resource type="Script" uid="uid://ceks8hel2fiw1" path="res://text_box.gd" id="37_8576b"]
 [ext_resource type="Script" uid="uid://d2ibvx7cujejb" path="res://strandbeest.gd" id="38_wdm1y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68r7h"]
@@ -621,6 +622,7 @@ offset_bottom = 624.0
 texture = ExtResource("11_yyih5")
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("37_8576b")
 
 [node name="Back Button" type="Button" parent="UI/Tutorial" unique_id=1582271071]
 texture_filter = 1

@@ -45,3 +45,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_animation_finished():
 	animation.play("Walk")
+
+func reset_round() -> void:
+	position.x = 576
+	position.y = 549
+	current_speed = 0.0
+	animation.play("Walk")
