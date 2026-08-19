@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 		get_tree().current_scene.add_child(wind_charge)
 		_state = "Burst"
 		_t = 0.0
+		game.start_round()
 
 # We also want to put a condition where the player presses DURING the "Burst" state
 	elif _state == "Burst" and Input.is_action_just_pressed("shooting") and not tutorial.tutorial_playing == true and game.game_playing == true:

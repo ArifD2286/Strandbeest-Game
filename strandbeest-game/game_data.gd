@@ -9,8 +9,7 @@ extends Node
 # 1st upgrade would cost 50 pipes, 2nd updrade would cost 100 pipes, 3rd upgrade would cost 150 pipes - this upgrade cost
 # applies for both the speed tolerance and momentum duration
 
-@onready var upgrade_1 = get_node("/root/Node2D/UI/Upgrade 1")
-@onready var upgrade_2 = get_node("/root/Node2D/UI/Upgrade 2")
+
 
 var pipes: int = 0
 var speed_level: int = 0
@@ -18,9 +17,6 @@ var momentum_level: int = 0
 var speed_cost: int
 var momentum_cost: int
 
-func _ready() -> void:
-	upgrade_1.pressed.connect(buy_speed_upgrade)
-	upgrade_2.pressed.connect(buy_momentum_upgrade)
 	
 
 func get_speed_upgrade_cost() -> int:

@@ -24,8 +24,9 @@ func _ready() -> void:
 func _hitbox_area_entered(area: Area2D)	-> void:
 	if area.get_parent().is_in_group("Wind charge"):
 		current_speed += speed_boost
-	elif area.get_parent().is_in_group("Finish line"):
+	elif area.is_in_group("Finish line"):
 		game.win()
+		animation.stop()
 
 func _physics_process(delta: float) -> void:
 	if not game.game_playing:
@@ -40,5 +41,7 @@ func _physics_process(delta: float) -> void:
 	position.y -= current_speed * delta
 	if current_speed >= max_speed:
 		game.game_over()
-		print("YOU LOST")
 		animation.play("Tip over")
+
+func _on_animation_finished():
+	animation.play("Walk")
