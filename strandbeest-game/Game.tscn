@@ -46,7 +46,9 @@
 [ext_resource type="AudioStream" uid="uid://dnm62qow67e0m" path="res://assets/hi.mp3" id="33_pbwgg"]
 [ext_resource type="AudioStream" uid="uid://umjcxulgi1nt" path="res://assets/bye.mp3" id="34_ndmee"]
 [ext_resource type="Script" uid="uid://ceks8hel2fiw1" path="res://text_box.gd" id="37_8576b"]
+[ext_resource type="Texture2D" uid="uid://bt215pav78hlw" path="res://assets/button 1.png" id="38_pnh27"]
 [ext_resource type="Script" uid="uid://d2ibvx7cujejb" path="res://strandbeest.gd" id="38_wdm1y"]
+[ext_resource type="Texture2D" uid="uid://cngmoia7ewx7n" path="res://assets/button 2.png" id="39_yw735"]
 [ext_resource type="Script" uid="uid://dsjwdb84g1h5e" path="res://back_button.gd" id="40_7vltt"]
 [ext_resource type="Script" uid="uid://cbw1kk2105s2t" path="res://next_button.gd" id="43_fj2yu"]
 [ext_resource type="Script" uid="uid://c5y2vhj1r8doh" path="res://tutorial_description_2.gd" id="44_fj2yu"]
@@ -55,6 +57,8 @@
 [ext_resource type="AudioStream" uid="uid://bv73rb2hrnet" path="res://assets/click.mp3" id="49_dyvha"]
 [ext_resource type="AudioStream" uid="uid://gwrsgl6bmsvg" path="res://assets/winning.mp3" id="50_xc54d"]
 [ext_resource type="AudioStream" uid="uid://dh1yh78sjia7s" path="res://assets/vine-boom.mp3" id="51_w250u"]
+[ext_resource type="Texture2D" uid="uid://bnpky8raljuo0" path="res://assets/big button 1.png" id="52_gvv74"]
+[ext_resource type="Texture2D" uid="uid://dt6xod3fydjur" path="res://assets/big button 2.png" id="53_3l0qi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l0qi"]
 atlas = ExtResource("16_n7324")
@@ -438,6 +442,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3byv"]
 size = Vector2(114, 20)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbwgg"]
+texture = ExtResource("38_pnh27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndmee"]
+texture = ExtResource("39_yw735")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eycq6"]
+texture = ExtResource("38_pnh27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lua15"]
+texture = ExtResource("38_pnh27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qirsl"]
+texture = ExtResource("39_yw735")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m68t5"]
+texture = ExtResource("38_pnh27")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjehv"]
 texture = ExtResource("22_jsoai")
 
@@ -455,6 +477,15 @@ texture = ExtResource("25_w7ht3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ktx7"]
 texture = ExtResource("24_y5ctq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pnh27"]
+texture = ExtResource("52_gvv74")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yw735"]
+texture = ExtResource("53_3l0qi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f2b8v"]
+texture = ExtResource("52_gvv74")
 
 [node name="Node2D" type="Node2D" unique_id=710081918]
 script = ExtResource("1_u44n3")
@@ -644,21 +675,29 @@ texture = ExtResource("21_y5ctq")
 
 [node name="Upgrade 1" type="Button" parent="UI" unique_id=1421568814]
 texture_filter = 1
-offset_left = 944.0
-offset_top = 162.0
-offset_right = 1090.0
-offset_bottom = 202.0
+offset_left = 939.0
+offset_top = 159.0
+offset_right = 1095.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pbwgg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ndmee")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eycq6")
 text = "Upgrade 1"
 script = ExtResource("30_xwkxq")
 
 [node name="Upgrade 2" type="Button" parent="UI" unique_id=1708285578]
 texture_filter = 1
-offset_left = 944.0
-offset_top = 274.0
-offset_right = 1090.0
-offset_bottom = 314.0
+offset_left = 939.0
+offset_top = 271.0
+offset_right = 1095.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lua15")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qirsl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m68t5")
 text = "Upgrade 2"
 script = ExtResource("31_wdm1y")
 
@@ -757,13 +796,17 @@ script = ExtResource("44_iueff")
 [node name="Start Tutorial" type="Button" parent="UI/Tutorial" unique_id=171098884]
 texture_filter = 1
 layout_mode = 0
-offset_left = 944.0
-offset_top = 523.0
-offset_right = 1090.0
-offset_bottom = 568.0
+offset_left = 939.0
+offset_top = 520.0
+offset_right = 1095.0
+offset_bottom = 573.0
+theme_override_colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 theme_override_fonts/font = ExtResource("21_bisgb")
-text = "Start
-Tutorial"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_pnh27")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yw735")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f2b8v")
+text = "Start Tutorial"
 
 [node name="Tutorial Description" type="Label" parent="UI/Tutorial" unique_id=1246340540]
 texture_filter = 1
@@ -803,6 +846,7 @@ stream = ExtResource("49_dyvha")
 [node name="Bye" type="AudioStreamPlayer2D" parent="UI/Tutorial" unique_id=1059195653]
 position = Vector2(400, 590)
 stream = ExtResource("34_ndmee")
+volume_db = -7.5
 
 [node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=1803136706]
 stream = ExtResource("50_xc54d")
