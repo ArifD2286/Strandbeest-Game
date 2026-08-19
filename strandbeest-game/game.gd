@@ -16,6 +16,9 @@ extends Node2D
 @onready var upgrade_1 = $"UI/Upgrade 1"
 @onready var upgrade_2 = $"UI/Upgrade 2"
 
+@onready var win_sound = $Win
+@onready var vine_boom = $VineBoom
+
 @onready var strandbeest = $Strandbeest
 @onready var player = $Player
 
@@ -41,12 +44,13 @@ func start_round() -> void:
 
 func game_over():
 	game_playing = false
-
+	vine_boom.play()
 
 func win():
+	win_sound.play()
 	game_playing = false
 	var elapsed_time = (Time.get_ticks_usec() - round_start_time) / 1000000.0
-	if elapsed_time <= 30.0:
+	if elapsed_time <= 60.0:
 		GameData.add_pipes(50)
 	else:
 		GameData.add_pipes(25)

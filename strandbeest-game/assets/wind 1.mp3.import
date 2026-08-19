@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cct3tcwn3f7cl"
+path="res://.godot/imported/wind 1.mp3-49d90739b334f3e78f253a4a2f12fb69.mp3str"
+
+[deps]
+
+source_file="res://assets/wind 1.mp3"
+dest_files=["res://.godot/imported/wind 1.mp3-49d90739b334f3e78f253a4a2f12fb69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

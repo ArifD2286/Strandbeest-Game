@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bfg5ssisd1vq2" path="res://player.gd" id="4_sb48q"]
 [ext_resource type="Texture2D" uid="uid://cfe5ajfuqsriu" path="res://assets/wave-back-2.png" id="4_yyih5"]
 [ext_resource type="Script" uid="uid://fcdahqbonwc2" path="res://wave_middle.gd" id="5_2vekm"]
+[ext_resource type="AudioStream" uid="uid://bgx3oacwfbrok" path="res://assets/ocean-waves.mp3" id="5_o6tbt"]
 [ext_resource type="Texture2D" uid="uid://b7rvbt3c61c5y" path="res://assets/wave-back.png" id="6_qjyg3"]
 [ext_resource type="Script" uid="uid://bnmvnr3blrbbm" path="res://wave_front.gd" id="6_yx171"]
 [ext_resource type="Texture2D" uid="uid://cmbmr1m3axpoj" path="res://assets/waves-middle.png" id="9_202ut"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dtxg7f0pogw41" path="res://assets/text-box.png" id="11_yyih5"]
 [ext_resource type="Texture2D" uid="uid://dmyv5tvpyqni2" path="res://assets/cloud1.png" id="15_8ktx7"]
 [ext_resource type="Texture2D" uid="uid://c8d6nkrcv4dk1" path="res://assets/strandbeest.png" id="16_hxy8k"]
+[ext_resource type="Texture2D" uid="uid://d7e8qqarqx48" path="res://assets/strandbeest 2.png" id="16_n7324"]
 [ext_resource type="Script" uid="uid://c50wdm4bkhaaq" path="res://cloud_1.gd" id="16_wuoie"]
 [ext_resource type="Script" uid="uid://dxp43xdvev1xb" path="res://cloud_2.gd" id="17_bvhbk"]
 [ext_resource type="Texture2D" uid="uid://bhx6jipdedw5m" path="res://assets/cloud2.png" id="17_hwsgv"]
@@ -24,6 +26,7 @@
 [ext_resource type="Script" uid="uid://bm8kge4b8egxa" path="res://cloud_3.gd" id="18_cpsxm"]
 [ext_resource type="Texture2D" uid="uid://osjvb633a141" path="res://assets/crab idle.png" id="18_wuoie"]
 [ext_resource type="Texture2D" uid="uid://bgjk76m21bspr" path="res://assets/cloud3.png" id="19_gebyw"]
+[ext_resource type="AudioStream" uid="uid://cct3tcwn3f7cl" path="res://assets/wind 1.mp3" id="19_nyc7o"]
 [ext_resource type="Script" uid="uid://dcw15ic0gam3p" path="res://tutorial.gd" id="20_cpsxm"]
 [ext_resource type="Texture2D" uid="uid://uv5kp0kxoone" path="res://assets/Sand.png" id="20_hmewc"]
 [ext_resource type="Script" uid="uid://cn33n3of0uggk" path="res://cloud_4.gd" id="21_aeq37"]
@@ -36,15 +39,50 @@
 [ext_resource type="Texture2D" uid="uid://brlirbmaowloi" path="res://assets/next arrow 1.png" id="24_y5ctq"]
 [ext_resource type="Texture2D" uid="uid://dqrbwqq1g7x8c" path="res://assets/next arrow 2.png" id="25_w7ht3"]
 [ext_resource type="PackedScene" uid="uid://8rebxu62mabb" path="res://wind_charge.tscn" id="26_suycs"]
+[ext_resource type="AudioStream" uid="uid://c4f7a6xecn5ea" path="res://assets/wind 2.mp3" id="29_ds8mp"]
 [ext_resource type="Script" uid="uid://dltf7cktwwpvs" path="res://finish_line.gd" id="30_2t1a5"]
 [ext_resource type="Script" uid="uid://hql8465ibnhm" path="res://upgrade_1.gd" id="30_xwkxq"]
 [ext_resource type="Script" uid="uid://cp0exg6qvqiw2" path="res://upgrade_2.gd" id="31_wdm1y"]
+[ext_resource type="AudioStream" uid="uid://dnm62qow67e0m" path="res://assets/hi.mp3" id="33_pbwgg"]
+[ext_resource type="AudioStream" uid="uid://umjcxulgi1nt" path="res://assets/bye.mp3" id="34_ndmee"]
 [ext_resource type="Script" uid="uid://ceks8hel2fiw1" path="res://text_box.gd" id="37_8576b"]
 [ext_resource type="Script" uid="uid://d2ibvx7cujejb" path="res://strandbeest.gd" id="38_wdm1y"]
 [ext_resource type="Script" uid="uid://dsjwdb84g1h5e" path="res://back_button.gd" id="40_7vltt"]
 [ext_resource type="Script" uid="uid://cbw1kk2105s2t" path="res://next_button.gd" id="43_fj2yu"]
 [ext_resource type="Script" uid="uid://c5y2vhj1r8doh" path="res://tutorial_description_2.gd" id="44_fj2yu"]
 [ext_resource type="Script" uid="uid://bt1cfqxat4f0r" path="res://dialogue.gd" id="44_iueff"]
+[ext_resource type="AudioStream" uid="uid://cefod7q4ll4cx" path="res://assets/purchase.mp3" id="48_v5dxo"]
+[ext_resource type="AudioStream" uid="uid://bv73rb2hrnet" path="res://assets/click.mp3" id="49_dyvha"]
+[ext_resource type="AudioStream" uid="uid://gwrsgl6bmsvg" path="res://assets/winning.mp3" id="50_xc54d"]
+[ext_resource type="AudioStream" uid="uid://dh1yh78sjia7s" path="res://assets/vine-boom.mp3" id="51_w250u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l0qi"]
+atlas = ExtResource("16_n7324")
+region = Rect2(0, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eycq6"]
+atlas = ExtResource("16_n7324")
+region = Rect2(71, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m68t5"]
+atlas = ExtResource("16_n7324")
+region = Rect2(142, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2b8v"]
+atlas = ExtResource("16_n7324")
+region = Rect2(213, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnith"]
+atlas = ExtResource("16_n7324")
+region = Rect2(284, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbkdk"]
+atlas = ExtResource("16_n7324")
+region = Rect2(355, 0, 71, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o760"]
+atlas = ExtResource("16_n7324")
+region = Rect2(426, 0, 71, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68r7h"]
 atlas = ExtResource("16_hxy8k")
@@ -128,6 +166,32 @@ region = Rect2(1349, 0, 71, 49)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xwkxq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l0qi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eycq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m68t5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2b8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnith")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbkdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o760")
+}],
+"loop": 0,
+"name": &"Breaking",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_68r7h")
@@ -407,6 +471,13 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("2_qjyg3")
 
+[node name="Finish Line" type="ColorRect" parent="." unique_id=1315191037]
+offset_left = 520.0
+offset_top = 102.0
+offset_right = 632.0
+offset_bottom = 104.0
+color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+
 [node name="Sea_Waves" type="Node2D" parent="." unique_id=842782235]
 
 [node name="Wave Bottom" type="Sprite2D" parent="Sea_Waves" unique_id=1596399506]
@@ -416,6 +487,10 @@ scale = Vector2(0.2850733, 0.2850733)
 texture = ExtResource("2_lvtmh")
 offset = Vector2(0, 1136.84)
 script = ExtResource("2_2vekm")
+
+[node name="Ocean waves" type="AudioStreamPlayer2D" parent="Sea_Waves/Wave Bottom" unique_id=1325295663]
+stream = ExtResource("5_o6tbt")
+volume_db = -10.0
 
 [node name="Wave Back 2" type="Sprite2D" parent="Sea_Waves" unique_id=1692914587]
 texture_filter = 1
@@ -485,6 +560,9 @@ shape = SubResource("RectangleShape2D_7cyb2")
 position = Vector2(0, -33)
 shape = SubResource("RectangleShape2D_7vnet")
 
+[node name="Wind Hit" type="AudioStreamPlayer2D" parent="Strandbeest" unique_id=2004393092]
+stream = ExtResource("19_nyc7o")
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
 position = Vector2(576, 629)
 script = ExtResource("4_sb48q")
@@ -524,6 +602,10 @@ script = ExtResource("22_suycs")
 position = Vector2(-576, -569)
 shape = SubResource("RectangleShape2D_gta21")
 
+[node name="Wind" type="AudioStreamPlayer2D" parent="Player" unique_id=284500865]
+stream = ExtResource("29_ds8mp")
+volume_db = -10.0
+
 [node name="Crab (narrator)" type="CharacterBody2D" parent="." unique_id=797984074]
 position = Vector2(400, 590)
 script = ExtResource("18_bvhbk")
@@ -537,6 +619,9 @@ animation = &"Crab Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab (narrator)" unique_id=2120320153]
 position = Vector2(-400, -570)
 shape = SubResource("RectangleShape2D_s33ni")
+
+[node name="Hi" type="AudioStreamPlayer2D" parent="Crab (narrator)" unique_id=917740949]
+stream = ExtResource("33_pbwgg")
 
 [node name="Wind charge" parent="." unique_id=1438876668 instance=ExtResource("26_suycs")]
 
@@ -712,11 +797,18 @@ offset_top = 104.0
 offset_right = 120.0
 offset_bottom = 144.0
 
-[node name="Timer" type="Timer" parent="." unique_id=338999408]
+[node name="Click" type="AudioStreamPlayer2D" parent="UI/Tutorial" unique_id=562992855]
+stream = ExtResource("49_dyvha")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1315191037]
-offset_left = 520.0
-offset_top = 102.0
-offset_right = 632.0
-offset_bottom = 104.0
-color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+[node name="Bye" type="AudioStreamPlayer2D" parent="UI/Tutorial" unique_id=1059195653]
+position = Vector2(400, 590)
+stream = ExtResource("34_ndmee")
+
+[node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=1803136706]
+stream = ExtResource("50_xc54d")
+
+[node name="Purchase" type="AudioStreamPlayer2D" parent="." unique_id=225364045]
+stream = ExtResource("48_v5dxo")
+
+[node name="VineBoom" type="AudioStreamPlayer2D" parent="." unique_id=1473003062]
+stream = ExtResource("51_w250u")

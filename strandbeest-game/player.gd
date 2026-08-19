@@ -5,6 +5,8 @@ const WindCharge = preload("res://wind_charge.tscn")
 @onready var tutorial = get_node("/root/Node2D/UI/Tutorial")
 @onready var game = get_node("/root/Node2D")
 
+@onready var wind_sound = $Wind
+
 @export var charge_duration: float = 0.5
 
 var pull_fraction: float = 0.0
@@ -30,6 +32,7 @@ func _process(delta: float) -> void:
 		var wind_charge = WindCharge.instantiate()
 		wind_charge.global_position = global_position
 		get_tree().current_scene.add_child(wind_charge)
+		wind_sound.play()
 		_state = "Burst"
 		_t = 0.0
 		game.start_round()

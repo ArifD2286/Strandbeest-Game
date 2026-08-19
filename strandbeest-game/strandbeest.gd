@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var game = get_node("/root/Node2D")
 
+@onready var wind_hit_sound = $"Wind Hit"
+
 @export var speed_boost: float = 50.0
 var decay_rate: float
 var max_speed: float
@@ -23,6 +25,7 @@ func _ready() -> void:
 
 func _hitbox_area_entered(area: Area2D)	-> void:
 	if area.get_parent().is_in_group("Wind charge"):
+		wind_hit_sound.play()
 		current_speed += speed_boost
 	elif area.is_in_group("Finish line"):
 		game.win()
@@ -41,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	position.y -= current_speed * delta
 	if current_speed >= max_speed:
 		game.game_over()
-		animation.play("Tip over")
+		animation.play("Breaking")
 
 func _on_animation_finished():
 	animation.play("Walk")

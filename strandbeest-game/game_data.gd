@@ -9,7 +9,7 @@ extends Node
 # 1st upgrade would cost 50 pipes, 2nd updrade would cost 100 pipes, 3rd upgrade would cost 150 pipes - this upgrade cost
 # applies for both the speed tolerance and momentum duration
 
-
+@onready var purchase_sound = get_node("/root/Node2D/Purchase")
 
 var pipes: int = 0
 var speed_level: int = 0
@@ -38,6 +38,7 @@ func buy_speed_upgrade() -> void:
 	if pipes >= speed_cost:
 		speed_level = speed_level + 1
 		pipes = pipes - speed_cost
+		purchase_sound.play()
 	pass
 
 
@@ -46,6 +47,7 @@ func buy_momentum_upgrade() -> void:
 	if pipes >= momentum_cost:
 		momentum_level = momentum_level + 1
 		pipes = pipes - momentum_cost
+		purchase_sound.play()
 	pass
 
 

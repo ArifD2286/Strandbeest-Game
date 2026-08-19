@@ -6,6 +6,8 @@ extends CharacterBody2D
 # Reminder: To get a variable from a different node, you first must use get_node 
 # and then add the node's name, (node name.variable name)
 
+@onready var hi = $Hi
+
 func _ready() -> void:
 	crab.visible = false
 	# Code below connects a function that will play once an animation finishes.
@@ -24,5 +26,6 @@ func _process(delta: float) -> void:
 func _on_animation_finished():
 	if crab.animation == "Crab Spawn":
 		crab.play("Crab Idle")
+		hi.play()
 	elif crab.animation == "Crab Idle":
 		crab.play("Crab Idle")

@@ -5,6 +5,8 @@ extends Sprite2D
 # but after reaching the max of the range, it would slowly disappear/lose visibility over time.
 # This would be the water going into sand effect
 
+@onready var waves = $"Ocean waves"
+
 @export var reach: float = 340.0
 @export var cycle_seconds: float = 8.0
 @export var phase_offset: float = -0.1
@@ -48,3 +50,4 @@ func _process(delta: float) -> void:
 			if _t >= _wait_time:
 				_t -= _wait_time
 				_state = "Entering"
+				waves.play()

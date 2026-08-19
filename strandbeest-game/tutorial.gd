@@ -18,6 +18,12 @@ extends Control
 @onready var tutor_desc = $"Tutorial Description"
 @onready var tutor_desc_2 = $"Tutorial Description 2"
 
+@onready var game = $/root/Node2D
+
+@onready var purchase = $Purchase
+@onready var click = $Click
+@onready var bye = $Bye
+
 var tutorial_playing: bool = false
 var _state: String = "Phase 1"
 
@@ -32,6 +38,8 @@ func _ready() -> void:
 
 
 func _on_start_tutorial_pressed() -> void:
+	click.play()
+	game.restart_game()
 	tutorial_playing = true
 	_state = "State 1"
 	text_box.fade_in()
@@ -53,6 +61,7 @@ func _on_start_tutorial_pressed() -> void:
 
 
 func _back_button_pressed() -> void:
+	click.play()
 	match _state:
 		"State 2":
 			_state = "State 1"
@@ -64,6 +73,7 @@ func _back_button_pressed() -> void:
 
 
 func _next_button_pressed() -> void:
+	click.play()
 	match _state:
 		"State 1":
 			_state = "State 2"
@@ -98,6 +108,7 @@ func update_display() -> void:
 			next_button.visible = true
 			back_button.visible = true
 			dialogue.text = "This is the end of the tutorial. Have fun playing!"
+			bye.play()
 
 		"End State":
 			next_button.fade_out()
