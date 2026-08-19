@@ -15,6 +15,8 @@ extends Control
 @onready var next_button = $"Next Button"
 @onready var start_tutorial = $"Start Tutorial"
 @onready var text_box = $"Text Box"
+@onready var tutor_desc = $"Tutorial Description"
+@onready var tutor_desc_2 = $"Tutorial Description 2"
 
 var tutorial_playing: bool = false
 var _state: String = "Phase 1"
@@ -32,6 +34,10 @@ func _ready() -> void:
 func _on_start_tutorial_pressed() -> void:
 	tutorial_playing = true
 	_state = "State 1"
+	text_box.fade_in()
+	dialogue.fade_in()
+	tutor_desc.visible = false
+	tutor_desc_2.visible = false
 	update_display()
 
 # We must use [func] block so that the button has something to connect to,
@@ -74,13 +80,13 @@ func update_display() -> void:
 	text_box.visible = true
 	match _state:
 		"State 1":
-			next_button.visible = true
+			next_button.fade_in()
 			back_button.visible = false
 			dialogue.text = "Hello player, welcome to Strandbeest Game! I am Mr Crabs."
 
 		"State 2":
 			next_button.visible = true
-			back_button.visible = true
+			back_button.fade_in()
 			dialogue.text = "This game's theme revolves around Strandbeests!"
 
 		"State 3":
@@ -94,8 +100,8 @@ func update_display() -> void:
 			dialogue.text = "This is the end of the tutorial. Have fun playing!"
 
 		"End State":
-			next_button.visible = false
-			back_button.visible = false
-			dialogue.visible = false
-			text_box.visible = false
+			next_button.fade_out()
+			back_button.fade_out()
+			dialogue.fade_out()
+			text_box.fade_out()
 			tutorial_playing = false

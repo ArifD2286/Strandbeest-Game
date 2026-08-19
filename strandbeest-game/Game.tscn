@@ -41,6 +41,10 @@
 [ext_resource type="Script" uid="uid://cp0exg6qvqiw2" path="res://upgrade_2.gd" id="31_wdm1y"]
 [ext_resource type="Script" uid="uid://ceks8hel2fiw1" path="res://text_box.gd" id="37_8576b"]
 [ext_resource type="Script" uid="uid://d2ibvx7cujejb" path="res://strandbeest.gd" id="38_wdm1y"]
+[ext_resource type="Script" uid="uid://dsjwdb84g1h5e" path="res://back_button.gd" id="40_7vltt"]
+[ext_resource type="Script" uid="uid://cbw1kk2105s2t" path="res://next_button.gd" id="43_fj2yu"]
+[ext_resource type="Script" uid="uid://c5y2vhj1r8doh" path="res://tutorial_description_2.gd" id="44_fj2yu"]
+[ext_resource type="Script" uid="uid://bt1cfqxat4f0r" path="res://dialogue.gd" id="44_iueff"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68r7h"]
 atlas = ExtResource("16_hxy8k")
@@ -636,6 +640,7 @@ theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vjehv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_obgl4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jsoai")
+script = ExtResource("40_7vltt")
 
 [node name="Next Button" type="Button" parent="UI/Tutorial" unique_id=48632995]
 texture_filter = 1
@@ -649,6 +654,7 @@ theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_oa40p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lgilx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8ktx7")
+script = ExtResource("43_fj2yu")
 
 [node name="Dialogue" type="Label" parent="UI/Tutorial" unique_id=2030920503]
 texture_filter = 1
@@ -661,6 +667,7 @@ theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_font_sizes/font_size = 20
 text = "Hi"
 autowrap_mode = 2
+script = ExtResource("44_iueff")
 
 [node name="Start Tutorial" type="Button" parent="UI/Tutorial" unique_id=171098884]
 texture_filter = 1
@@ -674,15 +681,36 @@ text = "Start
 Tutorial"
 
 [node name="Tutorial Description" type="Label" parent="UI/Tutorial" unique_id=1246340540]
+texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 947.0
+offset_top = 487.0
+offset_right = 1085.0
+offset_bottom = 499.0
+theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_font_sizes/font_size = 12
+text = "Press this if you're new!"
+autowrap_mode = 2
+
+[node name="Tutorial Description 2" type="Label" parent="UI/Tutorial" unique_id=2083454240]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 501.0
+offset_right = 1024.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_font_sizes/font_size = 19
+text = "v"
+script = ExtResource("44_fj2yu")
 
 [node name="TextureRect" type="TextureRect" parent="UI/Tutorial" unique_id=722616852]
 texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 80.0
+offset_top = 104.0
+offset_right = 120.0
+offset_bottom = 144.0
 
 [node name="Timer" type="Timer" parent="." unique_id=338999408]
 
