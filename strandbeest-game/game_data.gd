@@ -17,6 +17,9 @@ var momentum_level: int = 0
 var speed_cost: int
 var momentum_cost: int
 
+var max_speed_level: int = 5.0
+var max_momentum_level: int = 5.0
+
 	
 
 func get_speed_upgrade_cost() -> int:
@@ -35,7 +38,7 @@ func get_momentum_upgrade_cost() -> int:
 
 func buy_speed_upgrade() -> void:
 	get_speed_upgrade_cost()
-	if pipes >= speed_cost:
+	if pipes >= speed_cost and not speed_level >= max_speed_level:
 		speed_level = speed_level + 1
 		pipes = pipes - speed_cost
 		purchase_sound.play()
@@ -44,7 +47,7 @@ func buy_speed_upgrade() -> void:
 
 func buy_momentum_upgrade() -> void:
 	get_momentum_upgrade_cost()
-	if pipes >= momentum_cost:
+	if pipes >= momentum_cost and not momentum_level >= max_momentum_level:
 		momentum_level = momentum_level + 1
 		pipes = pipes - momentum_cost
 		purchase_sound.play()

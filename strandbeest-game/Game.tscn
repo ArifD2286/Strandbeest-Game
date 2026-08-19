@@ -521,7 +521,7 @@ script = ExtResource("2_2vekm")
 
 [node name="Ocean waves" type="AudioStreamPlayer2D" parent="Sea_Waves/Wave Bottom" unique_id=1325295663]
 stream = ExtResource("5_o6tbt")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="Wave Back 2" type="Sprite2D" parent="Sea_Waves" unique_id=1692914587]
 texture_filter = 1
@@ -593,6 +593,7 @@ shape = SubResource("RectangleShape2D_7vnet")
 
 [node name="Wind Hit" type="AudioStreamPlayer2D" parent="Strandbeest" unique_id=2004393092]
 stream = ExtResource("19_nyc7o")
+volume_db = -2.5
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1306487024]
 position = Vector2(576, 629)
@@ -635,7 +636,7 @@ shape = SubResource("RectangleShape2D_gta21")
 
 [node name="Wind" type="AudioStreamPlayer2D" parent="Player" unique_id=284500865]
 stream = ExtResource("29_ds8mp")
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="Crab (narrator)" type="CharacterBody2D" parent="." unique_id=797984074]
 position = Vector2(400, 590)
@@ -850,9 +851,11 @@ volume_db = -7.5
 
 [node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=1803136706]
 stream = ExtResource("50_xc54d")
+volume_db = -10.0
 
 [node name="Purchase" type="AudioStreamPlayer2D" parent="." unique_id=225364045]
 stream = ExtResource("48_v5dxo")
 
 [node name="VineBoom" type="AudioStreamPlayer2D" parent="." unique_id=1473003062]
 stream = ExtResource("51_w250u")
+volume_db = -10.0

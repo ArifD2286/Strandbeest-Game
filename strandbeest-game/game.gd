@@ -50,7 +50,8 @@ func win():
 	win_sound.play()
 	game_playing = false
 	var elapsed_time = (Time.get_ticks_usec() - round_start_time) / 1000000.0
-	if elapsed_time <= 60.0:
+	print(elapsed_time)
+	if elapsed_time <= 45.0:
 		GameData.add_pipes(50)
 	else:
 		GameData.add_pipes(25)
@@ -63,3 +64,4 @@ func restart_game() -> void:
 	player.reset_round()
 	round_start_time = 0.0
 	game_playing = true
+	round_started = false
