@@ -649,7 +649,7 @@ texture = ExtResource("15_8ktx7")
 script = ExtResource("22_suycs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=969435956]
-position = Vector2(-576, -569)
+position = Vector2(-576, -584)
 shape = SubResource("RectangleShape2D_gta21")
 
 [node name="Wind" type="AudioStreamPlayer2D" parent="Player" unique_id=284500865]
@@ -667,7 +667,7 @@ sprite_frames = SubResource("SpriteFrames_gta21")
 animation = &"Crab Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab (narrator)" unique_id=2120320153]
-position = Vector2(-400, -570)
+position = Vector2(-400, -566)
 shape = SubResource("RectangleShape2D_s33ni")
 
 [node name="Hi" type="AudioStreamPlayer2D" parent="Crab (narrator)" unique_id=917740949]
@@ -778,8 +778,8 @@ script = ExtResource("23_w7ht3")
 [node name="Tutorial" type="Control" parent="UI" unique_id=1892516250]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 20.0
+offset_bottom = 20.0
 script = ExtResource("20_cpsxm")
 
 [node name="Text Box" type="TextureRect" parent="UI/Tutorial" unique_id=275196930]

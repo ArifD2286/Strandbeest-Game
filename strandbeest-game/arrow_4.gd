@@ -1,6 +1,6 @@
 extends CanvasItem
 
-@export var fade_duration: float = 2.0
+@export var fade_duration: float = 1.0
 
 var _fade_state: String = "hidden"
 var _fade_t: float = 0.0

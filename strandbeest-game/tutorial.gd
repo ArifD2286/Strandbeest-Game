@@ -29,10 +29,13 @@ extends Control
 @onready var box2 = $"Box 2"
 
 @onready var game = $/root/Node2D
+@onready var animation = get_node("/root/Node2D/Strandbeest/AnimatedSprite2D")
+@onready var strandbeest = get_node("/root/Node2D/Strandbeest")
 
 @onready var purchase = $Purchase
 @onready var click = $Click
 @onready var bye = $Bye
+@onready var vineboom = $/root/Node2D/VineBoom
 
 var tutorial_playing: bool = false
 var _state: String = "Phase 1"
@@ -90,14 +93,42 @@ func _back_button_pressed() -> void:
 			_state = "State 2"
 		"State 4":
 			_state = "State 3"
+			arrow1.fade_out()
 		"State 5":
 			_state = "State 4"
+			arrow1.fade_in()
+			arrow2.fade_out()
 		"State 6":
 			_state = "State 5"
+			arrow2.fade_in()
 		"State 7":
 			_state = "State 6"
+			arrow3.fade_out()
 		"State 8":
 			_state = "State 7"
+			arrow3.fade_in()
+			arrow4.fade_out()
+		"State 9":
+			_state = "State 8"
+			arrow4.fade_in()
+			box1.fade_out()
+		"State 10":
+			_state = "State 9"
+			box1.fade_in()
+		"State 11":
+			_state = "State 10"
+		"State 12":
+			_state = "State 11"
+		"State 13":
+			_state = "State 12"
+		"State 14":
+			_state = "State 13"
+			box2.fade_out()
+		"State 15":
+			_state = "State 14"
+			box2.fade_in()
+		"State 16":
+			_state = "State 15"
 	update_display()
 
 
@@ -120,10 +151,34 @@ func _next_button_pressed() -> void:
 			arrow2.fade_out()
 		"State 6":
 			_state = "State 7"
+			arrow3.fade_in()
 		"State 7":
 			_state = "State 8"
-			bye.play()
+			arrow3.fade_out()
+			arrow4.fade_in()
 		"State 8":
+			_state = "State 9"
+			arrow4.fade_out()
+			box1.fade_in()
+		"State 9":
+			_state = "State 10"
+		"State 10":
+			_state = "State 11"
+		"State 11":
+			_state = "State 12"
+			box1.fade_out()
+		"State 12":
+			_state = "State 13"
+		"State 13":
+			_state = "State 14"
+			box2.fade_in()
+		"State 14":
+			_state = "State 15"
+			box2.fade_out()
+		"State 15":
+			_state = "State 16"
+			bye.play()
+		"State 16":
 			_state = "End State"
 	update_display()
 
@@ -143,15 +198,41 @@ func update_display() -> void:
 			dialogue.text = "The clouds down here is you..."
 			
 		"State 5":
-			dialogue.text = "... and you need to shoot winds at this strandbeest to make it walk."
+			dialogue.text = "... and by using your [ SPACE ] key, you shoot winds at this Strandbeest."
 			
 		"State 6":
-			dialogue.text = "For each wind charge you shoot at them, the strandbeest gains some movement speed."
+			dialogue.text = "For each wind charge you shoot at them, the Strandbeest gains some movement speed."
 			
 		"State 7":
-			dialogue.text = "hi lol"
-
+			dialogue.text = "If you get the Strandbeest to walk past the finish line in under 45 seconds..."
+			
 		"State 8":
+			dialogue.text = "... you get 50 pipes!! If you dont, you only get 25 pipes."
+			
+		"State 9":
+			dialogue.text = "Pipes is the in-game currency, it can be used to spend on upgrades."
+			
+		"State 10":
+			dialogue.text = "These upgrade will then help you by lowering the difficulty through out the game."
+			
+		"State 11":
+			dialogue.text = "The max level for each upgrade is 5, so once you have gotten all upgrades, you have officially completed the game"
+			
+		"State 12":
+			dialogue.text = 'Earlier you questioned, "Getting the Strandbeest to the other side as soon as possible? What is the trade off?"'
+		
+		"State 13":
+			dialogue.text = "Well, if you make it go too fast, the Strandbeest can break."
+			animation.play("Breaking")
+			vineboom.play()
+		"State 14":
+			dialogue.text = "To reset after each round, you could either press [ R ] key or press this restart button."
+		
+		"State 15":
+			dialogue.text = "I believe thats all from me, be sure to have some fun playing this game!"
+			strandbeest.reset_round()
+			
+		"State 16":
 			dialogue.text = "This is the end of the tutorial. Have fun playing!"
 
 		"End State":
