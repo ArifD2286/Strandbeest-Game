@@ -964,6 +964,7 @@ script = ExtResource("67_nsg7d")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="UI/Tutorial" unique_id=562992855]
 stream = ExtResource("49_dyvha")
+volume_db = -2.5
 
 [node name="Bye" type="AudioStreamPlayer2D" parent="UI/Tutorial" unique_id=1059195653]
 position = Vector2(400, 590)

@@ -205,7 +205,7 @@ func update_display() -> void:
 			dialogue.text = "For each wind charge you shoot at them, the Strandbeest gains some movement speed."
 			
 		"State 7":
-			dialogue.text = "You need to get the Strandbeest to walk past the finish line as soon as possible, if you do so in under 45 seconds..."
+			dialogue.text = "You need to get the Strandbeest to walk past the finish line as soon as possible. If you do so in under 45 seconds..."
 			
 		"State 8":
 			dialogue.text = "... you get 50 pipes!! If you don't, you only get 25 pipes."
@@ -221,7 +221,7 @@ func update_display() -> void:
 			
 		"State 12":
 			dialogue.text = 'Earlier you questioned, "Getting the Strandbeest to the other side as soon as possible? What is the trade off?"'
-		
+			strandbeest.reset_round()
 		"State 13":
 			dialogue.text = "Well, if you make it go too fast, the Strandbeest can break."
 			vineboom.play()

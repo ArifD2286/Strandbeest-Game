@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	if not game.game_playing:
 		return
 	
-	decay_rate = 50 - GameData.momentum_level * 10
+	decay_rate = 50 - GameData.momentum_level * 5
 	max_speed = GameData.speed_level * 12.50 + 75.0
 	current_speed = clamp(current_speed - decay_rate * delta, 0.0, max_speed)
 
@@ -47,17 +47,20 @@ func _physics_process(delta: float) -> void:
 	if current_speed >= max_speed:
 		game.game_over()
 		animation.play("Breaking")
+
 	if tutorial._state == "State 13" and tutorial.tutorial_playing == true:
 		match _tutorial_break_state:
 			"Tutorial in progress":
-				current_speed = 100.0
 				animation.play("Breaking")
+				current_speed = 50.0
 				_tutorial_break_state = "Playing"
 			"Playing":
 				if not animation.is_playing():
 					animation.stop()
+					animation.play("Walk")
 					current_speed = 0.0
 					_tutorial_break_state = "Done"
+		return
 	else:
 		_tutorial_break_state = "Tutorial in progress"
 
