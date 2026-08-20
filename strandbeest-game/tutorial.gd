@@ -182,6 +182,7 @@ func _next_button_pressed() -> void:
 			_state = "End State"
 	update_display()
 
+
 func update_display() -> void:
 	dialogue.visible = true
 	match _state:

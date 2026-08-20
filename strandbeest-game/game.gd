@@ -33,7 +33,7 @@ func _ready() -> void:
 	upgrade_2.pressed.connect(GameData.buy_momentum_upgrade)
 	restart.pressed.connect(restart_button)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if game_playing == false and Input.is_action_just_pressed("restart"):
 		restart_game()
 

@@ -15,8 +15,9 @@ extends CharacterBody2D
 @export var speed_boost: float = 50.0
 var decay_rate: float
 var max_speed: float
-
 var current_speed: float = 0.0
+
+var _tutorial_break_state: String = "Tutorial in progress"
 
 func _ready() -> void:
 	animation.play("Walk")
@@ -47,11 +48,18 @@ func _physics_process(delta: float) -> void:
 		game.game_over()
 		animation.play("Breaking")
 	if tutorial._state == "State 13" and tutorial.tutorial_playing == true:
-		current_speed = 100.0
-		animation.play("Breaking")
-		if animation.is_playing("Breaking") and animation.animation_finished:
-			animation.stop()
-			current_speed = 0.0
+		match _tutorial_break_state:
+			"Tutorial in progress":
+				current_speed = 100.0
+				animation.play("Breaking")
+				_tutorial_break_state = "Playing"
+			"Playing":
+				if not animation.is_playing():
+					animation.stop()
+					current_speed = 0.0
+					_tutorial_break_state = "Done"
+	else:
+		_tutorial_break_state = "Tutorial in progress"
 
 func _on_animation_finished():
 	animation.play("Walk")

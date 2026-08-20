@@ -20,7 +20,6 @@ var momentum_cost: int
 var max_speed_level: int = 5.0
 var max_momentum_level: int = 5.0
 
-	
 
 func get_speed_upgrade_cost() -> int:
 	speed_cost = (speed_level) * 50 + 50
