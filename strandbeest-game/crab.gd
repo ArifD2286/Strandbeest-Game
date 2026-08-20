@@ -15,7 +15,7 @@ func _ready() -> void:
 	crab.animation_finished.connect(_on_animation_finished)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if tutorial.tutorial_playing == true and not crab.visible:
 		crab.visible = true
 		crab.play("Crab Spawn")

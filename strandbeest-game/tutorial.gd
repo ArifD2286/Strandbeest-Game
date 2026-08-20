@@ -83,12 +83,21 @@ func _back_button_pressed() -> void:
 	match _state:
 		"State 1":
 			_state = "End State"
+			bye.play()
 		"State 2":
 			_state = "State 1"
 		"State 3":
 			_state = "State 2"
 		"State 4":
 			_state = "State 3"
+		"State 5":
+			_state = "State 4"
+		"State 6":
+			_state = "State 5"
+		"State 7":
+			_state = "State 6"
+		"State 8":
+			_state = "State 7"
 	update_display()
 
 
@@ -101,7 +110,20 @@ func _next_button_pressed() -> void:
 			_state = "State 3"
 		"State 3":
 			_state = "State 4"
+			arrow1.fade_in()
 		"State 4":
+			_state = "State 5"
+			arrow1.fade_out()
+			arrow2.fade_in()
+		"State 5":
+			_state = "State 6"
+			arrow2.fade_out()
+		"State 6":
+			_state = "State 7"
+		"State 7":
+			_state = "State 8"
+			bye.play()
+		"State 8":
 			_state = "End State"
 	update_display()
 
@@ -112,14 +134,25 @@ func update_display() -> void:
 			dialogue.text = "Hello player, welcome to Strandbeest Game! I am Mr Crabs."
 
 		"State 2":
-			dialogue.text = "This game's theme revolves around Strandbeests! You can watch some videos online about them."
+			dialogue.text = "This game's theme revolves around Strandbeests, made by Theo Jansen."
 
 		"State 3":
 			dialogue.text = "Let me show you around here first..."
-
+			
 		"State 4":
+			dialogue.text = "The clouds down here is you..."
+			
+		"State 5":
+			dialogue.text = "... and you need to shoot winds at this strandbeest to make it walk."
+			
+		"State 6":
+			dialogue.text = "For each wind charge you shoot at them, the strandbeest gains some movement speed."
+			
+		"State 7":
+			dialogue.text = "hi lol"
+
+		"State 8":
 			dialogue.text = "This is the end of the tutorial. Have fun playing!"
-			bye.play()
 
 		"End State":
 			next_button.fade_out()
