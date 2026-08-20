@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 @onready var wind_charge_animation = $AnimatedSprite2D
 
-@export var travel_speed: float = 200.0
+@export var travel_speed: float = 400.0
 
 func _ready() -> void:
 	add_to_group("Wind charge")

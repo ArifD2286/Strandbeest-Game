@@ -15,9 +15,11 @@ extends Node2D
 
 @onready var upgrade_1 = $"UI/Upgrade 1"
 @onready var upgrade_2 = $"UI/Upgrade 2"
+@onready var restart = $UI/Tutorial/Restart
 
 @onready var win_sound = $Win
 @onready var vine_boom = $VineBoom
+@onready var click = $UI/Tutorial/Click
 
 @onready var strandbeest = $Strandbeest
 @onready var player = $Player
@@ -29,6 +31,7 @@ var round_start_time: float = 0.0
 func _ready() -> void:
 	upgrade_1.pressed.connect(GameData.buy_speed_upgrade)
 	upgrade_2.pressed.connect(GameData.buy_momentum_upgrade)
+	restart.pressed.connect(restart_button)
 
 func _process(delta: float) -> void:
 	if game_playing == false and Input.is_action_just_pressed("restart"):
@@ -51,7 +54,7 @@ func win():
 	game_playing = false
 	var elapsed_time = (Time.get_ticks_usec() - round_start_time) / 1000000.0
 	print(elapsed_time)
-	if elapsed_time <= 45.0:
+	if elapsed_time <= 30.0:
 		GameData.add_pipes(50)
 	else:
 		GameData.add_pipes(25)
@@ -65,3 +68,8 @@ func restart_game() -> void:
 	round_start_time = 0.0
 	game_playing = true
 	round_started = false
+
+func restart_button() -> void:
+	click.play()
+	if game_playing == false:
+		restart_game()

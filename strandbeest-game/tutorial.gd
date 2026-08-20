@@ -44,6 +44,8 @@ func _on_start_tutorial_pressed() -> void:
 	_state = "State 1"
 	text_box.fade_in()
 	dialogue.fade_in()
+	next_button.fade_in()
+	back_button.fade_in()
 	tutor_desc.visible = false
 	tutor_desc_2.visible = false
 	update_display()
@@ -63,6 +65,8 @@ func _on_start_tutorial_pressed() -> void:
 func _back_button_pressed() -> void:
 	click.play()
 	match _state:
+		"State 1":
+			_state = "End State"
 		"State 2":
 			_state = "State 1"
 		"State 3":
@@ -87,26 +91,17 @@ func _next_button_pressed() -> void:
 
 func update_display() -> void:
 	dialogue.visible = true
-	text_box.visible = true
 	match _state:
 		"State 1":
-			next_button.fade_in()
-			back_button.visible = false
 			dialogue.text = "Hello player, welcome to Strandbeest Game! I am Mr Crabs."
 
 		"State 2":
-			next_button.visible = true
-			back_button.fade_in()
-			dialogue.text = "This game's theme revolves around Strandbeests!"
+			dialogue.text = "This game's theme revolves around Strandbeests! You can watch some videos online about them."
 
 		"State 3":
-			next_button.visible = true
-			back_button.visible = true
-			dialogue.text = "So the way the game works..."
+			dialogue.text = "Let me show you around here first..."
 
 		"State 4":
-			next_button.visible = true
-			back_button.visible = true
 			dialogue.text = "This is the end of the tutorial. Have fun playing!"
 			bye.play()
 
