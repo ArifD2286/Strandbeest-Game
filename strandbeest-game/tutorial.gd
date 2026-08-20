@@ -204,10 +204,10 @@ func update_display() -> void:
 			dialogue.text = "For each wind charge you shoot at them, the Strandbeest gains some movement speed."
 			
 		"State 7":
-			dialogue.text = "If you get the Strandbeest to walk past the finish line in under 45 seconds..."
+			dialogue.text = "You need to get the Strandbeest to walk past the finish line as soon as possible, if you do so in under 45 seconds..."
 			
 		"State 8":
-			dialogue.text = "... you get 50 pipes!! If you dont, you only get 25 pipes."
+			dialogue.text = "... you get 50 pipes!! If you don't, you only get 25 pipes."
 			
 		"State 9":
 			dialogue.text = "Pipes is the in-game currency, it can be used to spend on upgrades."
@@ -216,14 +216,13 @@ func update_display() -> void:
 			dialogue.text = "These upgrade will then help you by lowering the difficulty through out the game."
 			
 		"State 11":
-			dialogue.text = "The max level for each upgrade is 5, so once you have gotten all upgrades, you have officially completed the game"
+			dialogue.text = "The max level for each upgrade is 5, so once you have gotten all upgrades, you have officially completed the game."
 			
 		"State 12":
 			dialogue.text = 'Earlier you questioned, "Getting the Strandbeest to the other side as soon as possible? What is the trade off?"'
 		
 		"State 13":
 			dialogue.text = "Well, if you make it go too fast, the Strandbeest can break."
-			animation.play("Breaking")
 			vineboom.play()
 		"State 14":
 			dialogue.text = "To reset after each round, you could either press [ R ] key or press this restart button."

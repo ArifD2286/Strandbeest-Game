@@ -378,7 +378,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Crab Idle",
-"speed": 1.2
+"speed": 1.6
 }, {
 "frames": [{
 "duration": 1.0,

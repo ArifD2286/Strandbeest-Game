@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 @onready var animation = $AnimatedSprite2D
 @onready var game = get_node("/root/Node2D")
+@onready var tutorial = get_node("/root/Node2D/UI/Tutorial")
 
 @onready var wind_hit_sound = $"Wind Hit"
 
@@ -45,6 +46,12 @@ func _physics_process(delta: float) -> void:
 	if current_speed >= max_speed:
 		game.game_over()
 		animation.play("Breaking")
+	if tutorial._state == "State 13" and tutorial.tutorial_playing == true:
+		current_speed = 100.0
+		animation.play("Breaking")
+		if animation.is_playing("Breaking") and animation.animation_finished:
+			animation.stop()
+			current_speed = 0.0
 
 func _on_animation_finished():
 	animation.play("Walk")
