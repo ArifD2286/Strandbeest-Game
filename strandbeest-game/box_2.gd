@@ -1,8 +1,5 @@
 extends CanvasItem
 
-# Notes:
-# This code is to make the fade in and out effect, it will be controlled in tutorial.gd
-
 @export var fade_duration: float = 2.0
 
 var _fade_state: String = "hidden"

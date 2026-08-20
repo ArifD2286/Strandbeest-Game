@@ -10,13 +10,23 @@ extends Control
 # Talking about sequence of the tutorial, we can use a similar mechanic in wave_bottom.gd - states
 
 # Code to start tutorial
+
+@onready var start_tutorial = $"Start Tutorial"
+
 @onready var dialogue = $Dialogue
 @onready var back_button = $"Back Button"
 @onready var next_button = $"Next Button"
-@onready var start_tutorial = $"Start Tutorial"
 @onready var text_box = $"Text Box"
+
 @onready var tutor_desc = $"Tutorial Description"
 @onready var tutor_desc_2 = $"Tutorial Description 2"
+
+@onready var arrow1 = $Arrow
+@onready var arrow2 = $"Arrow 2"
+@onready var arrow3 = $"Arrow 3"
+@onready var arrow4 = $"Arrow 4"
+@onready var box1 = $Box
+@onready var box2 = $"Box 2"
 
 @onready var game = $/root/Node2D
 
@@ -28,6 +38,12 @@ var tutorial_playing: bool = false
 var _state: String = "Phase 1"
 
 func _ready() -> void:
+	arrow1.visible = false
+	arrow2.visible = false
+	arrow3.visible = false
+	arrow4.visible = false
+	box1.visible = false
+	box2.visible = false
 	dialogue.visible = false
 	text_box.visible = false
 	back_button.visible = false

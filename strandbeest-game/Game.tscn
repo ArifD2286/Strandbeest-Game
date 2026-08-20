@@ -59,6 +59,15 @@
 [ext_resource type="AudioStream" uid="uid://dh1yh78sjia7s" path="res://assets/vine-boom.mp3" id="51_w250u"]
 [ext_resource type="Texture2D" uid="uid://bnpky8raljuo0" path="res://assets/big button 1.png" id="52_gvv74"]
 [ext_resource type="Texture2D" uid="uid://dt6xod3fydjur" path="res://assets/big button 2.png" id="53_3l0qi"]
+[ext_resource type="Texture2D" uid="uid://nblq4fwa1jdl" path="res://assets/arrow.png" id="57_yw735"]
+[ext_resource type="Script" uid="uid://cm83nnj6rb1e" path="res://arrow.gd" id="58_gvv74"]
+[ext_resource type="Script" uid="uid://b116s100sbvr7" path="res://arrow_2.gd" id="59_bnith"]
+[ext_resource type="Script" uid="uid://cciybe8yc20xa" path="res://arrow_3.gd" id="60_qbkdk"]
+[ext_resource type="Script" uid="uid://dpqu6ri3d32hl" path="res://arrow_4.gd" id="61_0o760"]
+[ext_resource type="Texture2D" uid="uid://blod12ve4a3xq" path="res://assets/box 1.png" id="64_y0hep"]
+[ext_resource type="Script" uid="uid://bvh3cfwb23n68" path="res://box.gd" id="65_nf2s5"]
+[ext_resource type="Texture2D" uid="uid://l3nrv46hdgm6" path="res://assets/box 2.png" id="66_1nt2q"]
+[ext_resource type="Script" uid="uid://b125v7f8eh1vq" path="res://box_2.gd" id="67_nsg7d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l0qi"]
 atlas = ExtResource("16_n7324")
@@ -689,12 +698,13 @@ offset_left = 939.0
 offset_top = 183.0
 offset_right = 1095.0
 offset_bottom = 231.0
+focus_mode = 0
 theme_override_colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pbwgg")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ndmee")
 theme_override_styles/hover = SubResource("StyleBoxTexture_eycq6")
-text = "Upgrade 1"
+text = "50"
 script = ExtResource("30_xwkxq")
 
 [node name="Upgrade 2" type="Button" parent="UI" unique_id=1708285578]
@@ -703,12 +713,13 @@ offset_left = 939.0
 offset_top = 326.0
 offset_right = 1095.0
 offset_bottom = 374.0
+focus_mode = 0
 theme_override_colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_lua15")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qirsl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_m68t5")
-text = "Upgrade 2"
+text = "50"
 script = ExtResource("31_wdm1y")
 
 [node name="Upg 1 Desc" type="Label" parent="UI" unique_id=305596057]
@@ -790,6 +801,7 @@ offset_top = 609.99994
 offset_right = 73.0
 offset_bottom = 634.99994
 scale = Vector2(1.3992918, 1.3992918)
+focus_mode = 0
 theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vjehv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_obgl4")
@@ -804,6 +816,7 @@ offset_top = 610.0
 offset_right = 311.00006
 offset_bottom = 635.0
 scale = Vector2(1.3954034, 1.3954034)
+focus_mode = 0
 theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_oa40p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lgilx")
@@ -830,6 +843,7 @@ offset_left = 939.0
 offset_top = 480.0
 offset_right = 1095.0
 offset_bottom = 533.0
+focus_mode = 0
 theme_override_colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_font_sizes/font_size = 16
@@ -869,6 +883,7 @@ offset_left = 939.0
 offset_top = 527.0
 offset_right = 1095.0
 offset_bottom = 575.0
+focus_mode = 0
 theme_override_colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 theme_override_fonts/font = ExtResource("21_bisgb")
 theme_override_font_sizes/font_size = 16
@@ -877,13 +892,75 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_7vnet")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gta21")
 text = "Restart"
 
-[node name="TextureRect" type="TextureRect" parent="UI/Tutorial" unique_id=722616852]
+[node name="Arrow" type="TextureRect" parent="UI/Tutorial" unique_id=83789458]
 texture_filter = 1
 layout_mode = 0
-offset_left = 80.0
-offset_top = 104.0
-offset_right = 120.0
-offset_bottom = 144.0
+offset_left = 505.0001
+offset_top = 617.00006
+offset_right = 555.0001
+offset_bottom = 641.00006
+rotation = -2.3565974
+scale = Vector2(1.4952686, 1.4952686)
+texture = ExtResource("57_yw735")
+stretch_mode = 4
+script = ExtResource("58_gvv74")
+
+[node name="Arrow 2" type="TextureRect" parent="UI/Tutorial" unique_id=1917789046]
+texture_filter = 1
+layout_mode = 0
+offset_left = 524.0
+offset_top = 561.0
+offset_right = 574.0
+offset_bottom = 585.0
+rotation = -3.138979
+scale = Vector2(1.4961758, 1.4961758)
+texture = ExtResource("57_yw735")
+stretch_mode = 4
+script = ExtResource("59_bnith")
+
+[node name="Arrow 3" type="TextureRect" parent="UI/Tutorial" unique_id=215691388]
+texture_filter = 1
+layout_mode = 0
+offset_left = 495.0
+offset_top = 76.0
+offset_right = 545.0
+offset_bottom = 100.000015
+rotation = 3.1405826
+scale = Vector2(1.5008259, 1.5008259)
+texture = ExtResource("57_yw735")
+stretch_mode = 4
+script = ExtResource("60_qbkdk")
+
+[node name="Arrow 4" type="TextureRect" parent="UI/Tutorial" unique_id=585604743]
+texture_filter = 1
+layout_mode = 0
+offset_left = 927.9999
+offset_top = 106.0
+offset_right = 977.99994
+offset_bottom = 130.0
+rotation = 3.1409304
+scale = Vector2(1.4992692, 1.4992692)
+texture = ExtResource("57_yw735")
+stretch_mode = 4
+script = ExtResource("61_0o760")
+
+[node name="Box" type="TextureRect" parent="UI/Tutorial" unique_id=1370817676]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 127.0
+offset_right = 1104.0
+offset_bottom = 377.0
+texture = ExtResource("64_y0hep")
+script = ExtResource("65_nf2s5")
+
+[node name="Box 2" type="TextureRect" parent="UI/Tutorial" unique_id=621193925]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 522.0
+offset_right = 1104.0
+offset_bottom = 578.0
+texture = ExtResource("66_1nt2q")
+script = ExtResource("67_nsg7d")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="UI/Tutorial" unique_id=562992855]
 stream = ExtResource("49_dyvha")
