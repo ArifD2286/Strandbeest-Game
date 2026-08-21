@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	decay_rate = 50 - GameData.momentum_level * 5
-	max_speed = GameData.speed_level * 12.50 + 75.0
+	max_speed = GameData.speed_level * 25.0 + 75.0
 	current_speed = clamp(current_speed - decay_rate * delta, 0.0, max_speed)
 
 	animation.speed_scale = current_speed / 40.0

@@ -6,9 +6,10 @@ extends CharacterBody2D
 
 @onready var wind_charge_animation = $AnimatedSprite2D
 
-@export var travel_speed: float = 400.0
+@export var travel_speed: float = 350.0
 
 func _ready() -> void:
+	modulate.a = 0.75
 	add_to_group("Wind charge")
 	$Hitbox.area_entered.connect(_hitbox_area_entered)
 	wind_charge_animation.animation_finished.connect(_on_animation_finished)
