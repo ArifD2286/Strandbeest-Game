@@ -67,6 +67,8 @@
 [ext_resource type="Texture2D" uid="uid://blod12ve4a3xq" path="res://assets/box 1.png" id="64_y0hep"]
 [ext_resource type="Script" uid="uid://bvh3cfwb23n68" path="res://box.gd" id="65_nf2s5"]
 [ext_resource type="Texture2D" uid="uid://l3nrv46hdgm6" path="res://assets/box 2.png" id="66_1nt2q"]
+[ext_resource type="Texture2D" uid="uid://bad2xohkahfjb" path="res://assets/game cover.png" id="66_y0hep"]
+[ext_resource type="Script" uid="uid://ccwxfd1igfaa8" path="res://texture_rect.gd" id="67_nf2s5"]
 [ext_resource type="Script" uid="uid://b125v7f8eh1vq" path="res://box_2.gd" id="67_nsg7d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l0qi"]
@@ -503,6 +505,30 @@ texture = ExtResource("38_pnh27")
 texture = ExtResource("39_yw735")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gta21"]
+texture = ExtResource("38_pnh27")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nt2q"]
+atlas = ExtResource("18_wuoie")
+region = Rect2(0, 0, 70, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s33ni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nt2q")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g3byv"]
+texture = ExtResource("38_pnh27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vxuk"]
+texture = ExtResource("39_yw735")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v0hd4"]
 texture = ExtResource("38_pnh27")
 
 [node name="Node2D" type="Node2D" unique_id=710081918]
@@ -970,6 +996,35 @@ volume_db = -2.5
 position = Vector2(400, 590)
 stream = ExtResource("34_ndmee")
 volume_db = -7.5
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=1638874803]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("66_y0hep")
+script = ExtResource("67_nf2s5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/TextureRect" unique_id=1880792274]
+texture_filter = 1
+position = Vector2(955, 497.00003)
+rotation = -0.104773015
+scale = Vector2(4.3684664, 4.368467)
+sprite_frames = SubResource("SpriteFrames_s33ni")
+
+[node name="Button" type="Button" parent="UI" unique_id=553838949]
+visible = false
+texture_filter = 1
+offset_left = 493.0
+offset_top = 433.0
+offset_right = 659.0
+offset_bottom = 486.0
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_fonts/font = ExtResource("21_bisgb")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_g3byv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2vxuk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v0hd4")
+text = "START"
 
 [node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=1803136706]
 stream = ExtResource("50_xc54d")
